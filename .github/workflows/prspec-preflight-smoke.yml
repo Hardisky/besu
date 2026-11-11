@@ -1,0 +1,43 @@
+name: PRSpec preflight smoke
+on:
+  push:
+    branches: [prspec-pilot-preflight-20261110]
+    paths: [.github/workflows/prspec-preflight-smoke.yml]
+permissions: {}
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Test Meta with a bounded request
+        env:
+          MODEL_API_KEY: ${{ secrets.PRSPEC_META_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          import json, os, sys, urllib.error, urllib.request
+          key = os.environ.get('MODEL_API_KEY', '')
+          if not key:
+              print('FAIL: PRSPEC_META_API_KEY unavailable to this job')
+              sys.exit(1)
+          body = {'model': 'muse-wonder-1.0', 'messages': [{'role': 'user', 'content': 'Reply with exactly OK.'}], 'max_tokens': 256}
+          req = urllib.request.Request('https://api.meta.ai/v1/chat/completions', data=json.dumps(body).encode(), headers={'Authorization': 'Bearer '+key, 'Content-Type':'application/json'}, method='POST')
+          try:
+              with urllib.request.urlopen(req, timeout=90) as response:
+                  result = json.load(response)
+              choices = result.get('choices') or []
+              if not choices or not (choices[0].get('message') or {}).get('content'):
+                  print('FAIL: Meta returned no message content')
+                  sys.exit(1)
+              usage = result.get('usage') or {}
+              print('PASS: Meta returned a nonempty completion')
+              print('model:', result.get('model', 'not reported'))
+              print('finish_reason:', choices[0].get('finish_reason', 'not reported'))
+              print('prompt_tokens:', usage.get('prompt_tokens', 'not reported'))
+              print('completion_tokens:', usage.get('completion_tokens', 'not reported'))
+          except urllib.error.HTTPError as exc:
+              print('FAIL: Meta HTTP status', exc.code)
+              sys.exit(1)
+          except Exception as exc:
+              print('FAIL: Meta request error:', type(exc).__name__)
+              sys.exit(1)
+          PY
