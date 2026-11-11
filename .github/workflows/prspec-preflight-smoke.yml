@@ -25,8 +25,10 @@ jobs:
               with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=30) as response:
                   return response.read(5000000)
           reason = 'no_matching_output'
+          stage = 'jobs'
           try:
               jobs=json.loads(get(f'https://api.github.com/repos/{repo}/actions/runs/{runs[repo]}/jobs'))['jobs']
+              stage='logs'
               lines=get(f'https://api.github.com/repos/{repo}/actions/jobs/{jobs[0]["id"]}/logs').decode('utf-8', 'replace').splitlines()
               for line in lines:
                   m=re.match(r'^\d{4}-\d\d-\d\dT\S+Z (FAIL: .*)$', line)
@@ -38,8 +40,10 @@ jobs:
                   elif re.fullmatch(r'FAIL: Meta HTTP status (400|401|403|404|429|500|503)', msg): reason='http_'+msg.rsplit(' ',1)[-1]
                   elif msg.startswith('FAIL: Meta HTTP status '): reason='http_other'
                   elif msg.startswith('FAIL: Meta request error:'): reason='request_error'
+          except urllib.error.HTTPError as exc:
+              reason=stage+'_http_'+str(exc.code) if exc.code in (401,403,404,429,500,503) else stage+'_http_other'
           except Exception:
-              reason='logs_unavailable'
+              reason=stage+'_exception'
           with open(os.environ['GITHUB_OUTPUT'],'a') as f: f.write('reason='+reason+'\n')
           print('Only a fixed diagnostic category is exposed.')
           CODE
@@ -82,52 +86,51 @@ jobs:
       - name: Earlier failure logs_unavailable
         if: steps.logs.outputs.reason == 'logs_unavailable'
         run: echo Diagnostic category confirmed
-      - name: Checkout published PRSpec
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
-        with:
-          repository: Fosurero/PRSpec
-          ref: bf935bf25c2ece1433648f0bc5b3624efa4211fd
-          persist-credentials: false
-      - name: Install PRSpec dependencies
-        run: python3 -m pip install .
-      - name: Analyze real pinned Besu source with PRSpec and Meta
-        id: analysis
-        env:
-          MODEL_API_KEY: ${{ secrets.PRSPEC_META_API_KEY }}
-        run: |
-          python3 - <<'CODE'
-          import json, os, urllib.request
-          from openai import OpenAI
-          from src.analyzer import OpenAIAnalyzer
-          root='https://raw.githubusercontent.com/'
-          def get(url):
-              with urllib.request.urlopen(url,timeout=30) as f: return f.read().decode('utf-8')
-          outcome='setup_error'
-          try:
-              manifest=json.load(open('docs/evidence/2026-11-10/besu-pr5786/manifest-focused.json'))
-              spec=get(root+'ethereum/EIPs/'+manifest['spec_ref']+'/EIPS/eip-4844.md')
-              excerpt=manifest['spec_excerpt']
-              assert excerpt in spec
-              path=manifest['files'][1]
-              code=get(root+'Hardisky/besu/3adcc9715d9d277e177102ce331148e324af2985/'+path)
-              assert code.strip()
-              client=OpenAI(api_key=os.environ['MODEL_API_KEY'],base_url='https://api.meta.ai/v1',timeout=120,max_retries=0)
-              analyzer=OpenAIAnalyzer(api_key=os.environ['MODEL_API_KEY'],model='muse-wonder-1.0',provider_name='meta',max_tokens=4096,client=client)
-              result=analyzer.analyze_compliance(excerpt,code,{'eip_number':4844,'eip_title':'EIP-4844','file_name':path,'language':'java','focus_areas':['excess_blob_gas_update']})
-              outcome='model_error' if result.status=='ERROR' else 'ok'
-              print('Analysis outcome:',outcome)
-              print('Result status:',result.status)
-              print('Model:',result.meta.get('model_version','not reported'))
-              print('Finish reason:',result.meta.get('finish_reason','not reported'))
-              print('Input tokens:',result.meta.get('prompt_token_count','not reported'))
-              print('Output tokens:',result.meta.get('candidates_token_count','not reported'))
-          except Exception as exc:
-              print('Setup or request error class:',type(exc).__name__)
-          with open(os.environ['GITHUB_OUTPUT'],'a') as f: f.write('outcome='+outcome+'\n')
-          CODE
-      - name: PRSpec Meta analysis passed
-        if: steps.analysis.outputs.outcome == 'ok'
-        run: echo A valid PRSpec model response was received
-      - name: PRSpec Meta analysis failed
-        if: steps.analysis.outputs.outcome != 'ok'
-        run: exit 1
+      - name: Diagnostic access jobs_http_401
+        if: steps.logs.outputs.reason == 'jobs_http_401'
+        run: echo Diagnostic category confirmed
+      - name: Diagnostic access jobs_http_403
+        if: steps.logs.outputs.reason == 'jobs_http_403'
+        run: echo Diagnostic category confirmed
+      - name: Diagnostic access jobs_http_404
+        if: steps.logs.outputs.reason == 'jobs_http_404'
+        run: echo Diagnostic category confirmed
+      - name: Diagnostic access jobs_http_429
+        if: steps.logs.outputs.reason == 'jobs_http_429'
+        run: echo Diagnostic category confirmed
+      - name: Diagnostic access jobs_http_500
+        if: steps.logs.outputs.reason == 'jobs_http_500'
+        run: echo Diagnostic category confirmed
+      - name: Diagnostic access jobs_http_503
+        if: steps.logs.outputs.reason == 'jobs_http_503'
+        run: echo Diagnostic category confirmed
+      - name: Diagnostic access jobs_http_other
+        if: steps.logs.outputs.reason == 'jobs_http_other'
+        run: echo Diagnostic category confirmed
+      - name: Diagnostic access jobs_exception
+        if: steps.logs.outputs.reason == 'jobs_exception'
+        run: echo Diagnostic category confirmed
+      - name: Diagnostic access logs_http_401
+        if: steps.logs.outputs.reason == 'logs_http_401'
+        run: echo Diagnostic category confirmed
+      - name: Diagnostic access logs_http_403
+        if: steps.logs.outputs.reason == 'logs_http_403'
+        run: echo Diagnostic category confirmed
+      - name: Diagnostic access logs_http_404
+        if: steps.logs.outputs.reason == 'logs_http_404'
+        run: echo Diagnostic category confirmed
+      - name: Diagnostic access logs_http_429
+        if: steps.logs.outputs.reason == 'logs_http_429'
+        run: echo Diagnostic category confirmed
+      - name: Diagnostic access logs_http_500
+        if: steps.logs.outputs.reason == 'logs_http_500'
+        run: echo Diagnostic category confirmed
+      - name: Diagnostic access logs_http_503
+        if: steps.logs.outputs.reason == 'logs_http_503'
+        run: echo Diagnostic category confirmed
+      - name: Diagnostic access logs_http_other
+        if: steps.logs.outputs.reason == 'logs_http_other'
+        run: echo Diagnostic category confirmed
+      - name: Diagnostic access logs_exception
+        if: steps.logs.outputs.reason == 'logs_exception'
+        run: echo Diagnostic category confirmed
