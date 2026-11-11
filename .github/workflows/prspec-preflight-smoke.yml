@@ -10,34 +10,73 @@ jobs:
     timeout-minutes: 3
     steps:
       - name: Test Meta with a bounded request
+        id: meta
         env:
           MODEL_API_KEY: ${{ secrets.PRSPEC_META_API_KEY }}
         run: |
           python3 - <<'PY'
-          import json, os, sys, urllib.error, urllib.request
-          key = os.environ.get('MODEL_API_KEY', '')
-          if not key:
-              print('FAIL: PRSPEC_META_API_KEY unavailable to this job')
-              sys.exit(1)
-          body = {'model': 'muse-wonder-1.0', 'messages': [{'role': 'user', 'content': 'Reply with exactly OK.'}], 'max_tokens': 256}
-          req = urllib.request.Request('https://api.meta.ai/v1/chat/completions', data=json.dumps(body).encode(), headers={'Authorization': 'Bearer '+key, 'Content-Type':'application/json'}, method='POST')
+          import json, os, urllib.error, urllib.request
+          result = 'other_error'
           try:
-              with urllib.request.urlopen(req, timeout=90) as response:
-                  result = json.load(response)
-              choices = result.get('choices') or []
-              if not choices or not (choices[0].get('message') or {}).get('content'):
-                  print('FAIL: Meta returned no message content')
-                  sys.exit(1)
-              usage = result.get('usage') or {}
-              print('PASS: Meta returned a nonempty completion')
-              print('model:', result.get('model', 'not reported'))
-              print('finish_reason:', choices[0].get('finish_reason', 'not reported'))
-              print('prompt_tokens:', usage.get('prompt_tokens', 'not reported'))
-              print('completion_tokens:', usage.get('completion_tokens', 'not reported'))
+              key = os.environ.get('MODEL_API_KEY', '')
+              if not key:
+                  result = 'secret_missing'
+              else:
+                  body = {'model': 'muse-wonder-1.0', 'messages': [{'role': 'user', 'content': 'Reply with exactly OK.'}], 'max_tokens': 256}
+                  req = urllib.request.Request('https://api.meta.ai/v1/chat/completions', data=json.dumps(body).encode(), headers={'Authorization': 'Bearer '+key, 'Content-Type':'application/json'}, method='POST')
+                  with urllib.request.urlopen(req, timeout=90) as response:
+                      payload = json.load(response)
+                  choices = payload.get('choices') or []
+                  result = 'ok' if choices and (choices[0].get('message') or {}).get('content') else 'empty_response'
           except urllib.error.HTTPError as exc:
-              print('FAIL: Meta HTTP status', exc.code)
-              sys.exit(1)
-          except Exception as exc:
-              print('FAIL: Meta request error:', type(exc).__name__)
-              sys.exit(1)
+              result = 'http_' + str(exc.code) if exc.code in (400, 401, 403, 404, 429, 500, 503) else 'http_other'
+          except urllib.error.URLError:
+              result = 'network_error'
+          except Exception:
+              result = 'other_error'
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
+              output.write('result=' + result + '\n')
+          print('Preflight result:', result)
           PY
+      - name: Meta OK
+        if: steps.meta.outputs.result == 'ok'
+        run: echo 'Meta request passed'
+      - name: Meta secret missing
+        if: steps.meta.outputs.result == 'secret_missing'
+        run: echo 'Secret unavailable'
+      - name: Meta HTTP 400
+        if: steps.meta.outputs.result == 'http_400'
+        run: echo 'Bad request'
+      - name: Meta HTTP 401
+        if: steps.meta.outputs.result == 'http_401'
+        run: echo 'Authentication failed'
+      - name: Meta HTTP 403
+        if: steps.meta.outputs.result == 'http_403'
+        run: echo 'Access denied'
+      - name: Meta HTTP 404
+        if: steps.meta.outputs.result == 'http_404'
+        run: echo 'Endpoint or resource not found'
+      - name: Meta HTTP 429
+        if: steps.meta.outputs.result == 'http_429'
+        run: echo 'Rate or quota limited'
+      - name: Meta HTTP 500
+        if: steps.meta.outputs.result == 'http_500'
+        run: echo 'Service error'
+      - name: Meta HTTP 503
+        if: steps.meta.outputs.result == 'http_503'
+        run: echo 'Service unavailable'
+      - name: Meta HTTP other
+        if: steps.meta.outputs.result == 'http_other'
+        run: echo 'Other HTTP error'
+      - name: Meta empty response
+        if: steps.meta.outputs.result == 'empty_response'
+        run: echo 'No message content'
+      - name: Meta network error
+        if: steps.meta.outputs.result == 'network_error'
+        run: echo 'Network error'
+      - name: Meta other error
+        if: steps.meta.outputs.result == 'other_error'
+        run: echo 'Other error'
+      - name: Require successful response
+        if: steps.meta.outputs.result != 'ok'
+        run: exit 1
