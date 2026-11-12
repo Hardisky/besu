@@ -81,6 +81,7 @@ import org.jspecify.annotations.Nullable;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+// PRSpec pilot fork test: comment-only change that exercises the advisory workflow.
 public abstract class AbstractBlockCreator implements AsyncBlockCreator {
 
   public interface ExtraDataCalculator {
