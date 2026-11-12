@@ -1,0 +1,162 @@
+{
+  "github_run_id": "43132014617",
+  "github_sha": "89f313fc4736327777dc6b9fecd6fc079275f560",
+  "prspec_repo": "https://github.com/Hardisky/PRSpec",
+  "prspec_commit": "7cf99adc66ee843ae87061e79fa27cd294ac4fcf",
+  "eips_commit": "eb2e7a97aa70b1d7f39968c6be9ed3e731512f9d",
+  "before_sha": "19c989a6d96bb412f3815d14687da8cc334f1286",
+  "after_sha": "7605351c1ae86c955b28df90f66ede9c9c5f1386",
+  "prspec_models": "gemini:gemini-3.8-flash gemini:gemini-3.6-flash meta:muse-wonder-1.0",
+  "pilot_run_id": "43131616614",
+  "secret_scan": {
+    "secret_values_checked": 3,
+    "files_scanned": 36,
+    "files_with_secret": 0
+  },
+  "files": {
+    "after/failed/gemini-3.6-flash-prspec_eip4844_besu_20261112_010854.html": {
+      "bytes": 6451,
+      "sha256": "cb8dd1ab78c443f4e73d477e8a5c6bc1f57250b0098dcb450f36a3c867fbc53a"
+    },
+    "after/failed/gemini-3.6-flash-prspec_eip4844_besu_20261112_010854.json": {
+      "bytes": 2278,
+      "sha256": "4e2f4032472a5826dfeee480a5da00afcc235167115adc7e9d7278857ebd31a1"
+    },
+    "after/failed/gemini-3.6-flash-prspec_eip4844_besu_20261112_010854.md": {
+      "bytes": 2158,
+      "sha256": "4f929dba4766774aeb56c71eda28b7a7c0d5bad7737048ab6b2298682ce6c461"
+    },
+    "after/failed/gemini-3.8-flash-prspec_eip4844_besu_20261112_010852.html": {
+      "bytes": 6451,
+      "sha256": "f766e00601c0ac5d81d885a80afb717465a1cbf0595a3da0ebb57fe7d8ca19b6"
+    },
+    "after/failed/gemini-3.8-flash-prspec_eip4844_besu_20261112_010852.json": {
+      "bytes": 2278,
+      "sha256": "28b85b0be70fcffff054e2196e2699e291730dae9dce8710398dc70599dc20ea"
+    },
+    "after/failed/gemini-3.8-flash-prspec_eip4844_besu_20261112_010852.md": {
+      "bytes": 2158,
+      "sha256": "683c20f9ea80f7a823dcee33ac61ab82b728628ed4568ef4cb1e36cb759f6282"
+    },
+    "after/model-used": {
+      "bytes": 21,
+      "sha256": "4f0db9331572f4704cd8fecef351e5ad9aa865972067cbdfe2276457b9017bbd"
+    },
+    "after/output/prspec_eip4844_besu_20261112_011014.html": {
+      "bytes": 16589,
+      "sha256": "76c7904001a81e3c5daee752890b5eeb21c00facac5cdaa3682feddc81a3611e"
+    },
+    "after/output/prspec_eip4844_besu_20261112_011014.json": {
+      "bytes": 18726,
+      "sha256": "5b189ed6751c4dc5a6fa87df661f4763a40d8767888541dad6f16f6b6e0c11ef"
+    },
+    "after/output/prspec_eip4844_besu_20261112_011014.md": {
+      "bytes": 9628,
+      "sha256": "5131e14f281a5b9e1b88ffa0a7a275e387ae86bb1af75f7a2f2cf7c1d7f49116"
+    },
+    "before/failed/gemini-3.6-flash-prspec_eip4844_besu_20261112_010637.html": {
+      "bytes": 6451,
+      "sha256": "0b4f0d3ade9d8ce2a3947b6c8b87947a1cc19d2d4f015610b3b6153fa4d021c9"
+    },
+    "before/failed/gemini-3.6-flash-prspec_eip4844_besu_20261112_010637.json": {
+      "bytes": 2278,
+      "sha256": "efdd2e58cd076d9151dda3bb33e6deac75ed16f87a7c15284ba2cf2902f1a1d3"
+    },
+    "before/failed/gemini-3.6-flash-prspec_eip4844_besu_20261112_010637.md": {
+      "bytes": 2158,
+      "sha256": "7c39760989c4c213a649b274de4096bdf0c1d5c27fddc97c0df9768750dfe23a"
+    },
+    "before/failed/gemini-3.8-flash-prspec_eip4844_besu_20261112_010635.html": {
+      "bytes": 6451,
+      "sha256": "5270fd9402c1c5a5999b47b3548615b06b849af69f873ee5aab86649bd69c783"
+    },
+    "before/failed/gemini-3.8-flash-prspec_eip4844_besu_20261112_010635.json": {
+      "bytes": 2278,
+      "sha256": "1c06f1163e8f8b90e45454d073cebf6a7297ddeeedcccbeea6b9ce1b71a2052a"
+    },
+    "before/failed/gemini-3.8-flash-prspec_eip4844_besu_20261112_010635.md": {
+      "bytes": 2158,
+      "sha256": "04f5bfc3398e17622e750ed7c6f72a6275dd3baf89daa6d880fb85d866d7322b"
+    },
+    "before/model-used": {
+      "bytes": 21,
+      "sha256": "4f0db9331572f4704cd8fecef351e5ad9aa865972067cbdfe2276457b9017bbd"
+    },
+    "before/output/prspec_eip4844_besu_20261112_010850.html": {
+      "bytes": 16658,
+      "sha256": "68a02ff32e68bf7d3476fbff81ae16dfb97791ee51374d1f2741dd223aee24e2"
+    },
+    "before/output/prspec_eip4844_besu_20261112_010850.json": {
+      "bytes": 20131,
+      "sha256": "9a868be29f50efe7f070425bfaca6aa03c4110f3a1a63331b814fdfc96316290"
+    },
+    "before/output/prspec_eip4844_besu_20261112_010850.md": {
+      "bytes": 10471,
+      "sha256": "2a606a21300dbb3355ee4376950d64d0d1b536287b8a285beb65d9a91600ab30"
+    },
+    "pilot-pr-run/artifacts/prspec-report/attempts/gemini-3.6-flash-prspec_eip4844_besu_20261112_010233.html": {
+      "bytes": 7030,
+      "sha256": "ece35a8bcbf7df68ecb07d767e013e8534c5e514bdba96880c9d3427514f9c6d"
+    },
+    "pilot-pr-run/artifacts/prspec-report/attempts/gemini-3.6-flash-prspec_eip4844_besu_20261112_010233.json": {
+      "bytes": 3676,
+      "sha256": "05dffe4bc6d2ac1432049e6330abf68859d80d334ae6050b448360c8fd4b77ba"
+    },
+    "pilot-pr-run/artifacts/prspec-report/attempts/gemini-3.6-flash-prspec_eip4844_besu_20261112_010233.md": {
+      "bytes": 2652,
+      "sha256": "e6ff31cd0b0ad4a184234c7da195536a6aad1d6cc540306f16de377801484b78"
+    },
+    "pilot-pr-run/artifacts/prspec-report/attempts/gemini-3.8-flash-prspec_eip4844_besu_20261112_010232.html": {
+      "bytes": 7030,
+      "sha256": "151e57902159cabc98ca0f94a030a975a9f2f39acfe5a5a1f8e5d0d1b0ce8c22"
+    },
+    "pilot-pr-run/artifacts/prspec-report/attempts/gemini-3.8-flash-prspec_eip4844_besu_20261112_010232.json": {
+      "bytes": 3676,
+      "sha256": "7be4d6ede38d4d78e1647f0e12ec4881499fea8cb371d1022a47fc8938a92b2d"
+    },
+    "pilot-pr-run/artifacts/prspec-report/attempts/gemini-3.8-flash-prspec_eip4844_besu_20261112_010232.md": {
+      "bytes": 2652,
+      "sha256": "d0a6033257b968e8e6186b8a2937c398cf384e2413584f058c9acf3884f1e687"
+    },
+    "pilot-pr-run/artifacts/prspec-report/attempts.tsv": {
+      "bytes": 124,
+      "sha256": "b83bf029c057db34e993330ddd17f5fabe225a100fb177df5282d93a61764273"
+    },
+    "pilot-pr-run/artifacts/prspec-report/prspec_eip4844_besu_20261112_010414.html": {
+      "bytes": 6931,
+      "sha256": "3e73027758983b4845ae3209d83524f068a449ec849de22395f15a106c70d5e1"
+    },
+    "pilot-pr-run/artifacts/prspec-report/prspec_eip4844_besu_20261112_010414.json": {
+      "bytes": 4202,
+      "sha256": "67db284f80e80f5f7e8df5d0b31ffe70a6fdbb3ac5d559626eccbeeac5ddd072"
+    },
+    "pilot-pr-run/artifacts/prspec-report/prspec_eip4844_besu_20261112_010414.md": {
+      "bytes": 2734,
+      "sha256": "a75fdff3c6fec0098ad57647d86747d596f5054105d90575fcb1e27bab29b9a5"
+    },
+    "pilot-pr-run/pilot-jobs.json": {
+      "bytes": 3766,
+      "sha256": "888b8162c52e1da8d41cb4150e40c2297b7b58ad2e20df7e0ce6d1654c8c6920"
+    },
+    "pilot-pr-run/pilot.log": {
+      "bytes": 159865,
+      "sha256": "71de3ba80447651374bad0c0464a41d8a5dd6fae20084444795294c92ed70275"
+    },
+    "pilot-pr-run/trigger-run.json": {
+      "bytes": 12227,
+      "sha256": "32ced46c604740d4bd612739449fde8425b245875f8c684f41720d76d2b089e0"
+    },
+    "pilot-pr-run/trigger.log": {
+      "bytes": 6754,
+      "sha256": "fe1985155604fe5b4557c4482b3ea99d855a6480e5bbebb3911119b0f6eeff52"
+    },
+    "prspec-besu-live-demo.mp4": {
+      "bytes": 10015170,
+      "sha256": "63b88295fba0b6469e36bce4d367a9b6323befabdc6c7cd510bd4815ffc3c90a"
+    },
+    "terminal-transcript.txt": {
+      "bytes": 507846,
+      "sha256": "ca3de42da2c33db0596a4e8261bd74a14dbbb464f303399860378a3b1b904796"
+    }
+  }
+}

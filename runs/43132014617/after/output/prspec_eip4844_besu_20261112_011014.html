@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EIP-4844 Compliance Report - besu</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; background: #f0f2f5; color: #1a1a2e; line-height: 1.6; }
+        .page { max-width: 960px; margin: 40px auto; padding: 0 20px; }
+        header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 36px 40px; border-radius: 12px 12px 0 0; }
+        header h1 { margin: 0 0 6px; font-size: 1.6em; font-weight: 700; }
+        header .meta { font-size: 0.85em; opacity: 0.8; }
+        .body { background: #fff; padding: 32px 40px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+        .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 16px; margin-bottom: 32px; }
+        .kpi { background: #f8f9fb; border: 1px solid #e8eaed; border-radius: 8px; padding: 18px 14px; text-align: center; }
+        .kpi .num { font-size: 1.7em; font-weight: 700; }
+        .kpi .lbl { font-size: 0.78em; color: #666; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+        h2 { font-size: 1.15em; font-weight: 600; color: #333; border-bottom: 2px solid #e8eaed; padding-bottom: 8px; margin: 28px 0 18px; }
+        .file-card { border: 1px solid #e0e3e8; border-radius: 8px; margin-bottom: 20px; overflow: hidden; }
+        .file-card .head { display: flex; justify-content: space-between; align-items: center; padding: 12px 18px; background: #fafbfc; border-bottom: 1px solid #e0e3e8; }
+        .file-card .head .path { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; font-size: 0.88em; font-weight: 500; }
+        .badge { display: inline-block; padding: 3px 12px; border-radius: 12px; color: #fff; font-size: 0.75em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
+        .file-card .content { padding: 16px 18px; }
+        .file-card .content p { margin: 0 0 10px; }
+        .issue { border-left: 3px solid; padding: 12px 16px; margin: 12px 0; border-radius: 0 6px 6px 0; background: #fafbfc; }
+        .issue-high { border-color: #e03e3e; background: #fef2f2; }
+        .issue-medium { border-color: #d4a017; background: #fffbeb; }
+        .issue-low { border-color: #2e7d32; background: #f0fdf4; }
+        .issue .title { font-weight: 600; margin-bottom: 6px; font-size: 0.92em; }
+        .issue .detail { font-size: 0.85em; color: #555; margin: 3px 0; }
+        .issue .detail strong { color: #333; }
+        code { background: #eef0f4; padding: 1px 5px; border-radius: 3px; font-family: 'SFMono-Regular', Consolas, monospace; font-size: 0.88em; }
+        .footer { text-align: center; padding: 24px 0 0; margin-top: 32px; border-top: 1px solid #e8eaed; font-size: 0.8em; color: #888; }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header>
+        <h1>EIP-4844 Compliance Report - besu</h1>
+        <div class="meta">2026-11-12 01:10 &middot; Meta (muse-wonder-1.0) &middot; v2.0.0</div>
+    </header>
+    <div class="body">
+        <div class="kpi-row">
+            <div class="kpi"><div class="num">ISSUES FOUND</div><div class="lbl">Status</div></div>
+            <div class="kpi"><div class="num">82%</div><div class="lbl">Model-reported confidence (not probability)</div></div>
+            <div class="kpi"><div class="num">1</div><div class="lbl">Analysis units</div></div>
+            <div class="kpi"><div class="num" style="color:#e03e3e">4</div><div class="lbl">High</div></div>
+            <div class="kpi"><div class="num" style="color:#d4a017">3</div><div class="lbl">Medium</div></div>
+            <div class="kpi"><div class="num" style="color:#2e7d32">0</div><div class="lbl">Low</div></div>
+            
+        </div>
+
+        <div style="background:#f8f9fb;border:1px solid #e8eaed;border-radius:8px;padding:18px 22px;margin-bottom:28px;font-size:0.93em;line-height:1.7;white-space:pre-line;">PRSpec reported 1 analysis unit for besu&#x27;s EIP-4844 implementation using Meta (muse-wonder-1.0). Overall status: ISSUES FOUND. Average model-reported confidence: 82% (not a calibrated probability). 7 issues detected (4 high, 3 medium).
+
+Multi-file context — PARTIAL_MATCH (7 issues): The core excess-blob-gas formula in the supplied files matches the specification: TARGET_BLOB_GAS_PER_BLOCK is 393216, G</div>
+
+        <h2>Findings</h2>
+
+        <div class="file-card">
+            <div class="head">
+                <span class="path">Multi-file context</span>
+                <span class="badge" style="background:#ffc107">PARTIAL_MATCH</span>
+            </div>
+            <div class="content">
+                <p><strong>Model-reported confidence (not probability):</strong> 82%</p>
+                <p>The core excess-blob-gas formula in the supplied files matches the specification: TARGET_BLOB_GAS_PER_BLOCK is 393216, GAS_PER_BLOB is 131072, excess is max(parent excess plus parent blob gas used minus target, 0), and absent parent Cancun fields default to zero for the first post-fork block. However, the supplied implementation subset lacks or does not demonstrate several mandatory blob-transaction, maximum-blob-gas, blob-price, KZG, BLOBHASH, networking, and point-evaluation-precompile requirements, so it is only a partial match.</p>
+<p>Selected source files (one joint analysis; not sent if incomplete):</p><ul><li><code>ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java</code></li><li><code>ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/feemarket/ExcessBlobGasCalculator.java</code></li><li><code>evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java</code></li></ul><p>Code commit: <code>7605351c1ae86c955b28df90f66ede9c9c5f1386</code> · Spec SHA-256: <code>ef1316135b93e7ca</code> · Model version: <code>muse-wonder-1.0</code> · Tokens: <code>input 11,577, output 8,090</code> · Model latency: <code>78.6 s</code></p>
+                <div class="issue issue-high">
+                    <div class="title">[HIGH] MISSING_CHECK</div>
+                    
+                    <div class="detail"><strong>Description:</strong> CancunGasCalculator defines TARGET_BLOB_GAS_PER_BLOCK and BLOB_GAS_PER_BLOB but no MAX_BLOB_GAS_PER_BLOCK constant or comparison. AbstractBlockCreator sums selected blob counts and writes blobGasUsed without enforcing the maximum in the supplied block-creation path.</div>
+                    <div class="detail"><strong>Spec ref:</strong> <code>assert blob_gas_used &lt;= MAX_BLOB_GAS_PER_BLOCK</code></div>
+                    <div class="detail"><strong>Location:</strong> <code>ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java: computeExcessBlobGas(TransactionSelectionResults, ProtocolSpec); evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java: blobGasCost(int)</code></div>
+                    <div class="detail"><strong>Impact:</strong> A selector failure or directly supplied transaction list could create a block exceeding six blobs, causing consensus rejection, wasted work, or excess bandwidth consumption.</div>
+                    <div class="detail"><strong>Fix:</strong> Define MAX_BLOB_GAS_PER_BLOCK as 786432 and enforce blobGasUsed &lt;= MAX_BLOB_GAS_PER_BLOCK during transaction selection, block creation, and block validation.</div>
+                </div>
+
+                <div class="issue issue-high">
+                    <div class="title">[HIGH] MISSING_CHECK</div>
+                    
+                    <div class="detail"><strong>Description:</strong> The supplied code only calls getVersionedHashes().orElseThrow() and sums list sizes. It contains no checks for an empty versioned-hash list, the 0x01 version byte, a non-nil to address, LIMIT_BLOBS_PER_TX, or max_fee_per_blob_gas being at least the current blob gas price.</div>
+                    <div class="detail"><strong>Spec ref:</strong> <code>assert len(tx.blob_versioned_hashes) &gt; 0</code></div>
+                    <div class="detail"><strong>Location:</strong> <code>ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java: computeExcessBlobGas(TransactionSelectionResults, ProtocolSpec)</code></div>
+                    <div class="detail"><strong>Impact:</strong> Invalid blob transactions could be selected into locally created blocks and then rejected by peers, or inconsistent validation could create consensus failures.</div>
+                    <div class="detail"><strong>Fix:</strong> Validate at transaction admission and block validation that blob transactions have at least one hash, every hash starts with VERSIONED_HASH_VERSION_KZG, to is not nil, blob count limits are respected, and max_fee_per_blob_gas covers get_blob_gasprice(header).</div>
+                </div>
+
+                <div class="issue issue-high">
+                    <div class="title">[HIGH] MISSING_CHECK</div>
+                    
+                    <div class="detail"><strong>Description:</strong> CancunGasCalculator only derives the maximum precompile index from KZG_POINT_EVAL. None of the supplied files implements the 192-byte input format, versioned-hash comparison, verify_kzg_proof call, canonical field-element rejection, 50000 gas cost, or return of FIELD_ELEMENTS_PER_BLOB and BLS_MODULUS.</div>
+                    <div class="detail"><strong>Spec ref:</strong> <code>The precompile MUST reject non-canonical field elements (i.e. provided field elements MUST be strictly less than `BLS_MODULUS`).</code></div>
+                    <div class="detail"><strong>Location:</strong> <code>evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java: CancunGasCalculator()</code></div>
+                    <div class="detail"><strong>Impact:</strong> If not correctly implemented elsewhere, contracts cannot securely verify blob data against versioned hashes, and non-canonical inputs could cause inconsistent precompile behavior.</div>
+                    <div class="detail"><strong>Fix:</strong> Implement and test the point-evaluation precompile exactly as specified: reject inputs whose length is not 192, verify kzg_to_versioned_hash(commitment), verify the KZG proof, reject z or y values not strictly below BLS_MODULUS, charge 50000 gas, and return the two specified 32-byte values.</div>
+                </div>
+
+                <div class="issue issue-medium">
+                    <div class="title">[MEDIUM] MISSING_CHECK</div>
+                    
+                    <div class="detail"><strong>Description:</strong> Blob price calculation is delegated to FeeMarket.blobGasPricePerGas, but none of the supplied files contains fake_exponential or the MIN_BLOB_GASPRICE and BLOB_GASPRICE_UPDATE_FRACTION constants. The specified price function therefore cannot be verified from this implementation subset.</div>
+                    <div class="detail"><strong>Spec ref:</strong> <code>return fake_exponential(</code></div>
+                    <div class="detail"><strong>Location:</strong> <code>ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java: createBlock(...); ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/feemarket/ExcessBlobGasCalculator.java: calculateExcessBlobGasForParent(ProtocolSpec, BlockHeader)</code></div>
+                    <div class="detail"><strong>Impact:</strong> An incorrect delegated implementation would produce wrong blob fees, transaction-selection decisions, and potentially consensus-divergent block acceptance.</div>
+                    <div class="detail"><strong>Fix:</strong> Ensure FeeMarket.blobGasPricePerGas implements fake_exponential(1, excess_blob_gas, 3338477), including integer truncation behavior, and add tests against specification vectors.</div>
+                </div>
+
+                <div class="issue issue-high">
+                    <div class="title">[HIGH] MISSING_CHECK</div>
+                    
+                    <div class="detail"><strong>Description:</strong> No supplied file implements kzg_to_versioned_hash, equality checks between hashes, blobs, commitments and proofs, KZG blob/proof verification, or the announcement-only gossip restriction for blob transactions.</div>
+                    <div class="detail"><strong>Spec ref:</strong> <code>The KZG `commitments` match the corresponding `blobs` and `proofs`.</code></div>
+                    <div class="detail"><strong>Location:</strong> <code>ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java: computeExcessBlobGas(...); evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java: blobGasCost(int)</code></div>
+                    <div class="detail"><strong>Impact:</strong> Unverified sidecar or pooled-transaction data could bind incorrect blobs to versioned hashes, undermining data-availability assumptions and enabling invalid blob propagation.</div>
+                    <div class="detail"><strong>Fix:</strong> Implement kzg_to_versioned_hash using version byte 0x01 plus sha256(commitment)[1:], verify equal element counts and every commitment/hash/blob/proof relationship before pooling or propagation, and only announce blob transactions through NewPooledTransactionHashes.</div>
+                </div>
+
+                <div class="issue issue-medium">
+                    <div class="title">[MEDIUM] EDGE_CASE</div>
+                    
+                    <div class="detail"><strong>Description:</strong> Two overloads have incompatible meanings for the second argument: the int overload treats it as a blob count and multiplies by 131072, while the long overload treats it as already-calculated blob gas used. Java overload selection depends on the caller variable type, making an int blob-gas-used value easy to misinterpret as a blob count.</div>
+                    <div class="detail"><strong>Spec ref:</strong> <code>def calc_excess_blob_gas(parent: Header) -&gt; int:</code></div>
+                    <div class="detail"><strong>Location:</strong> <code>evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java: computeExcessBlobGas(long, int) and computeExcessBlobGas(long, long)</code></div>
+                    <div class="detail"><strong>Impact:</strong> A future or external caller passing blob gas used as an int would inflate consumed gas by a factor of 131072, producing incorrect excess blob gas and blob prices and potentially consensus divergence.</div>
+                    <div class="detail"><strong>Fix:</strong> Rename the methods to unambiguous names such as computeExcessBlobGasFromBlobCount and computeExcessBlobGasFromBlobGasUsed, or remove one overload and require callers to convert explicitly with blobGasCost.</div>
+                </div>
+
+                <div class="issue issue-medium">
+                    <div class="title">[MEDIUM] MISSING_CHECK</div>
+                    
+                    <div class="detail"><strong>Description:</strong> The supplied gas calculator contains no explicit BLOBHASH opcode handling or HASH_OPCODE_GAS constant. Its correct address and gas behavior cannot be established from these files.</div>
+                    <div class="detail"><strong>Spec ref:</strong> <code>The opcode has a gas cost of `HASH_OPCODE_GAS`.</code></div>
+                    <div class="detail"><strong>Location:</strong> <code>evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java: CancunGasCalculator() and inherited gas-cost methods</code></div>
+                    <div class="detail"><strong>Impact:</strong> If BLOBHASH is absent or incorrectly priced elsewhere, contracts cannot reliably retrieve blob versioned hashes and execution may diverge from other clients.</div>
+                    <div class="detail"><strong>Fix:</strong> Ensure opcode 0x49 returns tx.blob_versioned_hashes[index] for in-range indexes, zero otherwise, and charges exactly 3 gas.</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            PRSpec v2.0.0 &middot; Meta (muse-wonder-1.0) &middot; EIP-4844 &middot; besu &middot; 2026-11-12 01:10
+        </div>
+    </div>
+</div>
+</body>
+</html>

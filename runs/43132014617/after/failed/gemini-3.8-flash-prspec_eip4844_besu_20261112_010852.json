@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "title": "EIP-4844 Compliance Report - besu",
+    "eip_number": 4844,
+    "client": "besu",
+    "timestamp": "2026-11-12T01:08:52.614211",
+    "analyzer": "Gemini (gemini-3.8-flash)",
+    "version": "2.0.0"
+  },
+  "summary": {
+    "overall_status": "INCOMPLETE",
+    "average_confidence": 0,
+    "files_analyzed": 1,
+    "total_issues": 0,
+    "high_severity": 0,
+    "medium_severity": 0,
+    "low_severity": 0,
+    "verification": {
+      "verified": false,
+      "confirmed": 0,
+      "disputed": 0,
+      "refuted": 0
+    }
+  },
+  "results": [
+    {
+      "file_name": "Multi-file context",
+      "source_files": [
+        "ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java",
+        "ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/feemarket/ExcessBlobGasCalculator.java",
+        "evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java"
+      ],
+      "client_ref": "7605351c1ae86c955b28df90f66ede9c9c5f1386",
+      "source_sha256": {
+        "ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java": "35a00267978e462b49b4f6039c3cd0b15a1f89f6ca8dc6c9ee20e9b664d140da",
+        "ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/feemarket/ExcessBlobGasCalculator.java": "e6b432af8b7443beaa6f559b6bce9f1b3005276f63ddb5170f656791d6debe64",
+        "evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java": "807ebf298209b79445b9733241860ef89932214659c21aaf376932b583775dfc"
+      },
+      "spec_sha256": "ef1316135b93e7cad423cae9b169243a7c80e7a9d5059d0ad2599a0414aa564c",
+      "status": "ERROR",
+      "confidence": 0,
+      "issues": [],
+      "summary": "Gemini analysis failed: ClientError: 401 UNAUTHENTICATED. {'error': {'code': 401, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'UNAUTHENTICATED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'ACCESS_TOKEN_TYPE_UNSUPPORTED', 'metadata': {'method': 'google.ai.generativelanguage.v1.GenerativeService.GenerateContent', 'service': 'generativelanguage.googleapis.com'}}]}}",
+      "meta": {
+        "model": "gemini-3.8-flash"
+      }
+    }
+  ]
+}

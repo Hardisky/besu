@@ -1,0 +1,59 @@
+{
+  "metadata": {
+    "title": "EIP-4844 Compliance Report - besu",
+    "eip_number": 4844,
+    "client": "besu",
+    "timestamp": "2026-11-12T01:02:32.612360",
+    "analyzer": "Gemini (gemini-3.8-flash)",
+    "version": "2.0.0"
+  },
+  "summary": {
+    "overall_status": "INCOMPLETE",
+    "average_confidence": 0,
+    "files_analyzed": 1,
+    "total_issues": 0,
+    "high_severity": 0,
+    "medium_severity": 0,
+    "low_severity": 0,
+    "verification": {
+      "verified": false,
+      "confirmed": 0,
+      "disputed": 0,
+      "refuted": 0
+    }
+  },
+  "results": [
+    {
+      "file_name": "Multi-file context",
+      "source_files": [
+        "ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java",
+        "evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java",
+        "ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/feemarket/ExcessBlobGasCalculator.java",
+        "datatypes/src/main/java/org/hyperledger/besu/datatypes/BlobGas.java",
+        "ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/headervalidationrules/BlobGasValidationRule.java",
+        "evm/src/main/java/org/hyperledger/besu/evm/precompile/KZGPointEvalPrecompiledContract.java",
+        "ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/feemarket/BlobFeeMarket.java",
+        "ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/CancunTargetingGasLimitCalculator.java"
+      ],
+      "client_ref": "b695210e13fbbd1b1e5e255df60fa6b50e4b68e2",
+      "source_sha256": {
+        "ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java": "429cb1c7ab1a758a6f2dba79e058b52b5fd9169ec32ed03d57ea9f4986eb2083",
+        "evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java": "08d4664783d39dbe1495450d9fbc74af9001e1311f0de8f1d1f2d6fd5ca41bf8",
+        "ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/feemarket/ExcessBlobGasCalculator.java": "b1d97ada782429e0122ef093096a7f5f53538b313b55503e3d5f66f146c06f4e",
+        "datatypes/src/main/java/org/hyperledger/besu/datatypes/BlobGas.java": "6c6cf5d76f3d5766c8bb27c01beade6d52e4e6c9a906e00597d18053370c5fe4",
+        "ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/headervalidationrules/BlobGasValidationRule.java": "0de0a13720f7734ab9468c5c09733475afc20d47e27856558b98e0a55aeaaa62",
+        "evm/src/main/java/org/hyperledger/besu/evm/precompile/KZGPointEvalPrecompiledContract.java": "3d2ce089795acf2d7181d0e6b72360ac1e9904cc12b02cdbc6f99f9ad2490a4a",
+        "ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/feemarket/BlobFeeMarket.java": "6d685a184ef72bec528b8addecfa41d41446468b4e1d0469379364c9892b275f",
+        "ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/CancunTargetingGasLimitCalculator.java": "71c56ac30b1a3818c6e5d374da383746ce83b404fce2c5e32bbe63af0c4bbb86"
+      },
+      "spec_sha256": "ef1316135b93e7cad423cae9b169243a7c80e7a9d5059d0ad2599a0414aa564c",
+      "status": "ERROR",
+      "confidence": 0,
+      "issues": [],
+      "summary": "Gemini analysis failed: ClientError: 401 UNAUTHENTICATED. {'error': {'code': 401, 'message': 'API key not valid. Please pass a valid API key.', 'status': 'UNAUTHENTICATED', 'details': [{'@type': 'type.googleapis.com/google.rpc.ErrorInfo', 'reason': 'ACCESS_TOKEN_TYPE_UNSUPPORTED', 'metadata': {'method': 'google.ai.generativelanguage.v1.GenerativeService.GenerateContent', 'service': 'generativelanguage.googleapis.com'}}]}}",
+      "meta": {
+        "model": "gemini-3.8-flash"
+      }
+    }
+  ]
+}

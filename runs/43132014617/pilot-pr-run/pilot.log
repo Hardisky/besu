@@ -1,0 +1,1098 @@
+analyze	Set up job	﻿2026-11-12T01:02:04.2398280Z Current runner version: '2.338.2'
+analyze	Set up job	2026-11-12T01:02:04.2416877Z ##[group]Runner Image Provisioner
+analyze	Set up job	2026-11-12T01:02:04.2417502Z Hosted Compute Agent
+analyze	Set up job	2026-11-12T01:02:04.2417887Z Version: 20261028.624
+analyze	Set up job	2026-11-12T01:02:04.2418290Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+analyze	Set up job	2026-11-12T01:02:04.2418814Z Build Date: 2026-10-28T21:51:42Z
+analyze	Set up job	2026-11-12T01:02:04.2419233Z Worker ID: {c355d3e0-9d36-4452-bc35-b74185c0c6a7}
+analyze	Set up job	2026-11-12T01:02:04.2419679Z Region: centralus
+analyze	Set up job	2026-11-12T01:02:04.2420075Z Cloud: Azure
+analyze	Set up job	2026-11-12T01:02:04.2420407Z ##[endgroup]
+analyze	Set up job	2026-11-12T01:02:04.2421260Z ##[group]Operating System
+analyze	Set up job	2026-11-12T01:02:04.2421639Z Ubuntu
+analyze	Set up job	2026-11-12T01:02:04.2422002Z 24.04.5
+analyze	Set up job	2026-11-12T01:02:04.2422374Z LTS
+analyze	Set up job	2026-11-12T01:02:04.2422692Z ##[endgroup]
+analyze	Set up job	2026-11-12T01:02:04.2423115Z ##[group]Runner Image
+analyze	Set up job	2026-11-12T01:02:04.2423487Z Image: ubuntu-24.04
+analyze	Set up job	2026-11-12T01:02:04.2423917Z Version: 20261101.360.1
+analyze	Set up job	2026-11-12T01:02:04.2424573Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261101.360/images/ubuntu/Ubuntu2404-Readme.md
+analyze	Set up job	2026-11-12T01:02:04.2425851Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261101.360
+analyze	Set up job	2026-11-12T01:02:04.2426420Z ##[endgroup]
+analyze	Set up job	2026-11-12T01:02:04.2427261Z ##[group]GITHUB_TOKEN Permissions
+analyze	Set up job	2026-11-12T01:02:04.2428671Z Actions: read
+analyze	Set up job	2026-11-12T01:02:04.2429145Z Contents: read
+analyze	Set up job	2026-11-12T01:02:04.2429488Z Metadata: read
+analyze	Set up job	2026-11-12T01:02:04.2429859Z PullRequests: read
+analyze	Set up job	2026-11-12T01:02:04.2430225Z ##[endgroup]
+analyze	Set up job	2026-11-12T01:02:04.2431585Z Secret source: Actions
+analyze	Set up job	2026-11-12T01:02:04.2432206Z Cache mode: read
+analyze	Set up job	2026-11-12T01:02:04.2432854Z Prepare workflow directory
+analyze	Set up job	2026-11-12T01:02:04.2691297Z Prepare all required actions
+analyze	Set up job	2026-11-12T01:02:04.2730973Z Getting action download info
+analyze	Set up job	2026-11-12T01:02:04.5667474Z Download action repository 'actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131' (SHA:37930b1c2abaa49bbe596cd826c3c89aef350131)
+analyze	Set up job	2026-11-12T01:02:05.4248998Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+analyze	Set up job	2026-11-12T01:02:05.4809137Z Download action repository 'actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0' (SHA:6d4fd22b20465ccc0f7354476588e8df7c9ca0e0)
+analyze	Set up job	2026-11-12T01:02:05.9844026Z Download action repository 'actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9' (SHA:cf430e030ddbb5b0abf93d22962f4752f3646cd9)
+analyze	Set up job	2026-11-12T01:02:06.2228176Z Complete job name: analyze
+analyze	Download PR info	﻿2026-11-12T01:02:06.2801025Z ##[group]Run actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131
+analyze	Download PR info	2026-11-12T01:02:06.2802131Z with:
+analyze	Download PR info	2026-11-12T01:02:06.2802581Z   name: prspec-pr
+analyze	Download PR info	2026-11-12T01:02:06.2803056Z   path: pr
+analyze	Download PR info	2026-11-12T01:02:06.2803500Z   run-id: 43131595530
+analyze	Download PR info	2026-11-12T01:02:06.2808252Z   github-token: ***
+analyze	Download PR info	2026-11-12T01:02:06.2808761Z   merge-multiple: false
+analyze	Download PR info	2026-11-12T01:02:06.2809303Z   repository: Hardisky/besu
+analyze	Download PR info	2026-11-12T01:02:06.2809913Z env:
+analyze	Download PR info	2026-11-12T01:02:06.2810444Z   PRSPEC_REPO: https://github.com/Hardisky/PRSpec
+analyze	Download PR info	2026-11-12T01:02:06.2811264Z   PRSPEC_COMMIT: 7cf99adc66ee843ae87061e79fa27cd294ac4fcf
+analyze	Download PR info	2026-11-12T01:02:06.2812247Z   PRSPEC_MODELS: gemini:gemini-3.8-flash gemini:gemini-3.6-flash meta:muse-wonder-1.0
+analyze	Download PR info	2026-11-12T01:02:06.2813122Z ##[endgroup]
+analyze	Download PR info	2026-11-12T01:02:08.8606369Z Downloading single artifact
+analyze	Download PR info	2026-11-12T01:02:09.2988672Z Preparing to download the following artifacts:
+analyze	Download PR info	2026-11-12T01:02:09.2989432Z - prspec-pr (ID: 13906020110, Size: 279, Expected Digest: sha256:fa0765980d61c2b5863a51e1c6b241977d2bba97d959ebd6c44cb3fdfb67179a)
+analyze	Download PR info	2026-11-12T01:02:09.2997004Z Downloading artifact '13906020110' from 'Hardisky/besu'
+analyze	Download PR info	2026-11-12T01:02:09.6973707Z Redirecting to blob download url: https://productionresultssa3.blob.core.windows.net/actions-results/5b2b6209-e00c-8502-962e-32e885ff6354/workflow-job-run-247aeead-a5cd-599b-8f3a-b1ec651ce80f/artifacts/95d94af5dfe6af3764d312d77326528662a7f0c5d5964c38e6df364db4fd3ba3.zip
+analyze	Download PR info	2026-11-12T01:02:09.6975206Z Starting download of artifact to: /home/runner/work/besu/besu/pr
+analyze	Download PR info	2026-11-12T01:02:09.8615862Z (node:2032) [DEP0005] DeprecationWarning: Buffer() is deprecated due to security and usability issues. Please use the Buffer.alloc(), Buffer.allocUnsafe(), or Buffer.from() methods instead.
+analyze	Download PR info	2026-11-12T01:02:09.8616745Z (Use `node --trace-deprecation ...` to show where the warning was created)
+analyze	Download PR info	2026-11-12T01:02:09.8769693Z SHA256 digest of downloaded artifact is fa0765980d61c2b5863a51e1c6b241977d2bba97d959ebd6c44cb3fdfb67179a
+analyze	Download PR info	2026-11-12T01:02:09.8789935Z Artifact download completed successfully.
+analyze	Download PR info	2026-11-12T01:02:09.8790526Z Total of 1 artifact(s) downloaded
+analyze	Download PR info	2026-11-12T01:02:09.8796279Z Download artifact has finished successfully
+analyze	Validate PR info	﻿2026-11-12T01:02:09.8949948Z ##[group]Run number=$(cat pr/number); sha=$(cat pr/head_sha)
+analyze	Validate PR info	2026-11-12T01:02:09.8950290Z ^[[36;1mnumber=$(cat pr/number); sha=$(cat pr/head_sha)^[[0m
+analyze	Validate PR info	2026-11-12T01:02:09.8950533Z ^[[36;1m[[ "$number" =~ ^[0-9]+$ ]] || { echo "bad PR number"; exit 1; }^[[0m
+analyze	Validate PR info	2026-11-12T01:02:09.8950805Z ^[[36;1m[[ "$sha" =~ ^[0-9a-f]{40}$ ]] || { echo "bad head sha"; exit 1; }^[[0m
+analyze	Validate PR info	2026-11-12T01:02:09.8951069Z ^[[36;1mgh api "repos/${GITHUB_REPOSITORY}/actions/runs/${RUN_ID}" \^[[0m
+analyze	Validate PR info	2026-11-12T01:02:09.8951397Z ^[[36;1m  --jq '.pull_requests[].number' | grep -Fxq "$number" || { echo "run not associated with PR"; exit 1; }^[[0m
+analyze	Validate PR info	2026-11-12T01:02:09.8951739Z ^[[36;1mgh api "repos/${GITHUB_REPOSITORY}/pulls/${number}" > pr/metadata.json^[[0m
+analyze	Validate PR info	2026-11-12T01:02:09.8951986Z ^[[36;1mactual=$(jq -r .head.sha pr/metadata.json)^[[0m
+analyze	Validate PR info	2026-11-12T01:02:09.8952204Z ^[[36;1mowner=$(jq -r .head.repo.full_name pr/metadata.json)^[[0m
+analyze	Validate PR info	2026-11-12T01:02:09.8952501Z ^[[36;1m[[ "$owner" == "$GITHUB_REPOSITORY" ]] || { echo "fork PRs are not supported in this draft"; exit 1; }^[[0m
+analyze	Validate PR info	2026-11-12T01:02:09.8952853Z ^[[36;1m[[ "$sha" == "$actual" ]] || { echo "PR head changed or artifact mismatch"; exit 1; }^[[0m
+analyze	Validate PR info	2026-11-12T01:02:09.8953112Z ^[[36;1mecho "number=$number" >> "$GITHUB_OUTPUT"^[[0m
+analyze	Validate PR info	2026-11-12T01:02:09.8953306Z ^[[36;1mecho "sha=$sha" >> "$GITHUB_OUTPUT"^[[0m
+analyze	Validate PR info	2026-11-12T01:02:09.8971162Z shell: /usr/bin/bash -e {0}
+analyze	Validate PR info	2026-11-12T01:02:09.8971338Z env:
+analyze	Validate PR info	2026-11-12T01:02:09.8971505Z   PRSPEC_REPO: https://github.com/Hardisky/PRSpec
+analyze	Validate PR info	2026-11-12T01:02:09.8971731Z   PRSPEC_COMMIT: 7cf99adc66ee843ae87061e79fa27cd294ac4fcf
+analyze	Validate PR info	2026-11-12T01:02:09.8971998Z   PRSPEC_MODELS: gemini:gemini-3.8-flash gemini:gemini-3.6-flash meta:muse-wonder-1.0
+analyze	Validate PR info	2026-11-12T01:02:09.8973581Z   GH_TOKEN: ***
+analyze	Validate PR info	2026-11-12T01:02:09.8973705Z   RUN_ID: 43131595530
+analyze	Validate PR info	2026-11-12T01:02:09.8973836Z ##[endgroup]
+analyze	Check out PR files as data (never executed)	﻿2026-11-12T01:02:12.9456616Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9456865Z with:
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9456998Z   ref: b695210e13fbbd1b1e5e255df60fa6b50e4b68e2
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9457163Z   path: pr-src
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9457282Z   fetch-depth: 1
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9457408Z   persist-credentials: false
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9457696Z   sparse-checkout: ethereum/blockcreation/src/main/java
+analyze	Check out PR files as data (never executed)	ethereum/core/src/main/java
+analyze	Check out PR files as data (never executed)	evm/src/main/java
+analyze	Check out PR files as data (never executed)	datatypes/src/main/java
+analyze	Check out PR files as data (never executed)	
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9457998Z   repository: Hardisky/besu
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9459332Z   token: ***
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9459442Z   ssh-strict: true
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9459557Z   ssh-user: git
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9459667Z   clean: true
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9459787Z   sparse-checkout-cone-mode: true
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9459993Z   fetch-tags: false
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9460109Z   show-progress: true
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9460229Z   lfs: false
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9460335Z   submodules: false
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9460453Z   set-safe-directory: true
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9460620Z   allow-unsafe-pr-checkout: false
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9460759Z env:
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9460896Z   PRSPEC_REPO: https://github.com/Hardisky/PRSpec
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9461104Z   PRSPEC_COMMIT: 7cf99adc66ee843ae87061e79fa27cd294ac4fcf
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9461359Z   PRSPEC_MODELS: gemini:gemini-3.8-flash gemini:gemini-3.6-flash meta:muse-wonder-1.0
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:12.9461580Z ##[endgroup]
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.0208102Z Syncing repository: Hardisky/besu
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.0208977Z ##[group]Getting Git version info
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.0209513Z Working directory is '/home/runner/work/besu/besu/pr-src'
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.0209839Z [command]/usr/bin/git version
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.1626345Z git version 2.56.0
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.1643879Z ##[endgroup]
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.1650278Z Temporarily overriding HOME='/home/runner/work/_temp/eb79b3be-975a-4052-b16d-7cabddac8cf4' before making global git config changes
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.1650841Z Adding repository directory to the temporary git global config as a safe directory
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.1654585Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/besu/besu/pr-src
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.1903472Z ##[group]Determining repository object format
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.1905260Z ##[endgroup]
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.1908639Z ##[group]Initializing the repository
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.1908881Z [command]/usr/bin/git init /home/runner/work/besu/besu/pr-src
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.2602086Z hint: Using 'master' as the name for the initial branch. This default branch name
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.2602716Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.2603003Z hint: to use in all of your new repositories, which will suppress this warning,
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.2603285Z hint: call:
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.2603461Z hint:
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.2603705Z hint: 	git config --global init.defaultBranch <name>
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.2603962Z hint:
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.2604207Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.2604570Z hint: 'development'. The just-created branch can be renamed via this command:
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.2604788Z hint:
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.2604915Z hint: 	git branch -m <name>
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.2605260Z hint:
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.2605438Z hint: Disable this message with "git config set advice.defaultBranchName false"
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.2715443Z Initialized empty Git repository in /home/runner/work/besu/besu/pr-src/.git/
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.2726238Z [command]/usr/bin/git remote add origin https://github.com/Hardisky/besu
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.2997393Z ##[endgroup]
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.2997810Z ##[group]Disabling automatic garbage collection
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.3001063Z [command]/usr/bin/git config --local gc.auto 0
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.3042866Z ##[endgroup]
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.3043259Z ##[group]Setting up auth
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.3043567Z Removing SSH command configuration
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.3049730Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.3090985Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.5662658Z Removing HTTP extra header
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.5668422Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.5717009Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.5936998Z Removing includeIf entries pointing to credentials config files
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.5943206Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.5987701Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.6188581Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-2eaa9f51-67c7-4c03-bf80-69f086b510a7.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.6235925Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/besu/besu/pr-src/.git.path /home/runner/work/_temp/git-credentials-2eaa9f51-67c7-4c03-bf80-69f086b510a7.config
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.6291600Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/besu/besu/pr-src/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-2eaa9f51-67c7-4c03-bf80-69f086b510a7.config
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.6331637Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/pr-src/.git.path /github/runner_temp/git-credentials-2eaa9f51-67c7-4c03-bf80-69f086b510a7.config
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.6371701Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/pr-src/.git/worktrees/*.path /github/runner_temp/git-credentials-2eaa9f51-67c7-4c03-bf80-69f086b510a7.config
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.6411134Z ##[endgroup]
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.6411490Z ##[group]Fetching the repository
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:13.6417427Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=1 origin b695210e13fbbd1b1e5e255df60fa6b50e4b68e2
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:14.1778897Z From https://github.com/Hardisky/besu
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:14.1779307Z  * branch            b695210e13fbbd1b1e5e255df60fa6b50e4b68e2 -> FETCH_HEAD
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:14.1786981Z [command]/usr/bin/git rev-parse --verify --quiet b695210e13fbbd1b1e5e255df60fa6b50e4b68e2^{object}
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:14.1823639Z b695210e13fbbd1b1e5e255df60fa6b50e4b68e2
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:14.1827951Z ##[endgroup]
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:14.1828296Z ##[group]Determining the checkout info
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:14.1828906Z ##[endgroup]
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:14.1829200Z ##[group]Setting up sparse checkout
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:14.1833272Z [command]/usr/bin/git sparse-checkout set ethereum/blockcreation/src/main/java ethereum/core/src/main/java evm/src/main/java datatypes/src/main/java
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:14.2041465Z ##[endgroup]
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:14.2041834Z ##[group]Checking out the ref
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:14.2045446Z [command]/usr/bin/git checkout --progress --force b695210e13fbbd1b1e5e255df60fa6b50e4b68e2
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0950230Z Note: switching to 'b695210e13fbbd1b1e5e255df60fa6b50e4b68e2'.
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0950670Z 
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0950793Z You are in 'detached HEAD' state. You can look around, make experimental
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0951098Z changes and commit them, and you can discard any commits you make in this
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0951360Z state without impacting any branches by switching back to a branch.
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0951512Z 
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0951614Z If you want to create a new branch to retain commits you create, you may
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0951866Z do so (now or later) by using -c with the switch command. Example:
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0952008Z 
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0952074Z   git switch -c <new-branch-name>
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0952409Z 
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0952473Z Or undo this operation with:
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0952567Z 
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0952644Z   git switch -
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0952729Z 
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0952844Z Turn off this advice by setting config variable advice.detachedHead to false
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0953011Z 
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.0953160Z HEAD is now at b695210 test: comment-only change to exercise the PRSpec pilot
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1014197Z ##[endgroup]
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1066900Z [command]/usr/bin/git log -1 --format=%H
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1101256Z b695210e13fbbd1b1e5e255df60fa6b50e4b68e2
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1108419Z ##[group]Removing auth
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1108641Z Removing SSH command configuration
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1110810Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1147946Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1467313Z Removing HTTP extra header
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1470038Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1510472Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1715510Z Removing includeIf entries pointing to credentials config files
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1718768Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1754863Z includeif.gitdir:/home/runner/work/besu/besu/pr-src/.git.path
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1755473Z includeif.gitdir:/home/runner/work/besu/besu/pr-src/.git/worktrees/*.path
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1755875Z includeif.gitdir:/github/workspace/pr-src/.git.path
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1756261Z includeif.gitdir:/github/workspace/pr-src/.git/worktrees/*.path
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1762165Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/besu/besu/pr-src/.git.path
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1793637Z /home/runner/work/_temp/git-credentials-2eaa9f51-67c7-4c03-bf80-69f086b510a7.config
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1802222Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/besu/besu/pr-src/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-2eaa9f51\-67c7\-4c03\-bf80\-69f086b510a7\.config
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1847691Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/besu/besu/pr-src/.git/worktrees/*.path
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1880292Z /home/runner/work/_temp/git-credentials-2eaa9f51-67c7-4c03-bf80-69f086b510a7.config
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1886975Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/besu/besu/pr-src/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-2eaa9f51\-67c7\-4c03\-bf80\-69f086b510a7\.config
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1927996Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/pr-src/.git.path
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1961299Z /github/runner_temp/git-credentials-2eaa9f51-67c7-4c03-bf80-69f086b510a7.config
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.1966754Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/pr-src/.git.path \/github\/runner_temp\/git\-credentials\-2eaa9f51\-67c7\-4c03\-bf80\-69f086b510a7\.config
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.2006708Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/pr-src/.git/worktrees/*.path
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.2038911Z /github/runner_temp/git-credentials-2eaa9f51-67c7-4c03-bf80-69f086b510a7.config
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.2044917Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/pr-src/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-2eaa9f51\-67c7\-4c03\-bf80\-69f086b510a7\.config
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.2085157Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.2288933Z Removing credentials config '/home/runner/work/_temp/git-credentials-2eaa9f51-67c7-4c03-bf80-69f086b510a7.config'
+analyze	Check out PR files as data (never executed)	2026-11-12T01:02:15.2297068Z ##[endgroup]
+analyze	Check out pinned EIP specifications	﻿2026-11-12T01:02:15.2439623Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2439855Z with:
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2439980Z   repository: ethereum/EIPs
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2440136Z   ref: eb2e7a97aa70b1d7f39968c6be9ed3e731512f9d
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2440311Z   path: eips
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2440433Z   persist-credentials: false
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2440582Z   sparse-checkout: EIPS
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2441918Z   token: ***
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2442026Z   ssh-strict: true
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2442139Z   ssh-user: git
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2442252Z   clean: true
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2442374Z   sparse-checkout-cone-mode: true
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2442517Z   fetch-depth: 1
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2442628Z   fetch-tags: false
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2442750Z   show-progress: true
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2442867Z   lfs: false
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2442972Z   submodules: false
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2443092Z   set-safe-directory: true
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2443233Z   allow-unsafe-pr-checkout: false
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2443378Z env:
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2443552Z   PRSPEC_REPO: https://github.com/Hardisky/PRSpec
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2443754Z   PRSPEC_COMMIT: 7cf99adc66ee843ae87061e79fa27cd294ac4fcf
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2444009Z   PRSPEC_MODELS: gemini:gemini-3.8-flash gemini:gemini-3.6-flash meta:muse-wonder-1.0
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.2444350Z ##[endgroup]
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3029691Z Syncing repository: ethereum/EIPs
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3040130Z ##[group]Getting Git version info
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3040552Z Working directory is '/home/runner/work/besu/besu/eips'
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3063189Z [command]/usr/bin/git version
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3100012Z git version 2.56.0
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3146690Z ##[endgroup]
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3154464Z Temporarily overriding HOME='/home/runner/work/_temp/bdff9db1-b383-45fc-8c87-2aedc2cb99b4' before making global git config changes
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3155400Z Adding repository directory to the temporary git global config as a safe directory
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3158410Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/besu/besu/eips
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3202332Z ##[group]Determining repository object format
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3202890Z ##[endgroup]
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3203221Z ##[group]Initializing the repository
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3203569Z [command]/usr/bin/git init /home/runner/work/besu/besu/eips
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3258083Z hint: Using 'master' as the name for the initial branch. This default branch name
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3259650Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3260414Z hint: to use in all of your new repositories, which will suppress this warning,
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3260973Z hint: call:
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3261296Z hint:
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3261663Z hint: 	git config --global init.defaultBranch <name>
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3262077Z hint:
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3262472Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3263045Z hint: 'development'. The just-created branch can be renamed via this command:
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3263544Z hint:
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3263863Z hint: 	git branch -m <name>
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3264209Z hint:
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3264627Z hint: Disable this message with "git config set advice.defaultBranchName false"
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3265395Z Initialized empty Git repository in /home/runner/work/besu/besu/eips/.git/
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3275773Z [command]/usr/bin/git remote add origin https://github.com/ethereum/EIPs
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3311225Z ##[endgroup]
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3311609Z ##[group]Disabling automatic garbage collection
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3314459Z [command]/usr/bin/git config --local gc.auto 0
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3344654Z ##[endgroup]
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3345248Z ##[group]Setting up auth
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3345498Z Removing SSH command configuration
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3349367Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3378899Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3582853Z Removing HTTP extra header
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3588996Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3632152Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3838202Z Removing includeIf entries pointing to credentials config files
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3843147Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.3884097Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.4085654Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-96f0d9db-8269-4d35-9046-a8d3273a512a.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.4130628Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/besu/besu/eips/.git.path /home/runner/work/_temp/git-credentials-96f0d9db-8269-4d35-9046-a8d3273a512a.config
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.4170462Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/besu/besu/eips/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-96f0d9db-8269-4d35-9046-a8d3273a512a.config
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.4208589Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/eips/.git.path /github/runner_temp/git-credentials-96f0d9db-8269-4d35-9046-a8d3273a512a.config
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.4246189Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/eips/.git/worktrees/*.path /github/runner_temp/git-credentials-96f0d9db-8269-4d35-9046-a8d3273a512a.config
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.4283608Z ##[endgroup]
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.4283968Z ##[group]Fetching the repository
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.4288834Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --filter=blob:none --depth=1 origin eb2e7a97aa70b1d7f39968c6be9ed3e731512f9d
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.7916488Z From https://github.com/ethereum/EIPs
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.7916962Z  * branch            eb2e7a97aa70b1d7f39968c6be9ed3e731512f9d -> FETCH_HEAD
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.7925408Z [command]/usr/bin/git rev-parse --verify --quiet eb2e7a97aa70b1d7f39968c6be9ed3e731512f9d^{object}
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.7960918Z eb2e7a97aa70b1d7f39968c6be9ed3e731512f9d
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.7964240Z ##[endgroup]
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.7964579Z ##[group]Determining the checkout info
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.7965152Z ##[endgroup]
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.7965512Z ##[group]Setting up sparse checkout
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.7968101Z [command]/usr/bin/git sparse-checkout set EIPS
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.8009825Z ##[endgroup]
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.8010188Z ##[group]Checking out the ref
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:15.8013127Z [command]/usr/bin/git checkout --progress --force eb2e7a97aa70b1d7f39968c6be9ed3e731512f9d
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9464914Z Updating files:   0% (1/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9467964Z Updating files:   1% (7/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9473970Z Updating files:   2% (14/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9477989Z Updating files:   3% (21/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9482782Z Updating files:   4% (28/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9487099Z Updating files:   5% (34/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9491089Z Updating files:   6% (41/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9494876Z Updating files:   7% (48/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9498190Z Updating files:   8% (55/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9500972Z Updating files:   9% (62/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9505116Z Updating files:  10% (68/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9510406Z Updating files:  11% (75/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9516447Z Updating files:  12% (82/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9518825Z Updating files:  13% (89/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9523679Z Updating files:  14% (95/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9526967Z Updating files:  15% (102/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9531013Z Updating files:  16% (109/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9536118Z Updating files:  17% (116/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9539255Z Updating files:  18% (123/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9543110Z Updating files:  19% (129/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9547536Z Updating files:  20% (136/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9551195Z Updating files:  21% (143/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9554582Z Updating files:  22% (150/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9558505Z Updating files:  23% (156/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9561613Z Updating files:  24% (163/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9565799Z Updating files:  25% (170/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9570354Z Updating files:  26% (177/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9574291Z Updating files:  27% (184/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9580050Z Updating files:  28% (190/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9583762Z Updating files:  29% (197/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9589227Z Updating files:  30% (204/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9593463Z Updating files:  31% (211/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9597969Z Updating files:  32% (217/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9601544Z Updating files:  33% (224/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9606736Z Updating files:  34% (231/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9610661Z Updating files:  35% (238/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9614251Z Updating files:  36% (245/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9618978Z Updating files:  37% (251/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9623907Z Updating files:  38% (258/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9628527Z Updating files:  39% (265/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9631205Z Updating files:  40% (272/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9636042Z Updating files:  41% (278/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9640518Z Updating files:  42% (285/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9643891Z Updating files:  43% (292/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9647954Z Updating files:  44% (299/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9652290Z Updating files:  45% (306/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9657509Z Updating files:  46% (312/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9662202Z Updating files:  47% (319/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9668070Z Updating files:  48% (326/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9671287Z Updating files:  49% (333/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9675609Z Updating files:  50% (339/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9682374Z Updating files:  51% (346/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9687164Z Updating files:  52% (353/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9691388Z Updating files:  53% (360/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9696439Z Updating files:  54% (367/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9700626Z Updating files:  55% (373/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9706429Z Updating files:  56% (380/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9712135Z Updating files:  57% (387/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9716597Z Updating files:  58% (394/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9720017Z Updating files:  59% (401/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9725928Z Updating files:  60% (407/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9730146Z Updating files:  61% (414/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9734884Z Updating files:  62% (421/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9738663Z Updating files:  63% (428/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9742926Z Updating files:  64% (434/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9746684Z Updating files:  65% (441/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9750188Z Updating files:  66% (448/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9754219Z Updating files:  67% (455/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9758769Z Updating files:  68% (462/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9763063Z Updating files:  69% (468/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9767060Z Updating files:  70% (475/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9771214Z Updating files:  71% (482/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9775144Z Updating files:  72% (489/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9780104Z Updating files:  73% (495/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9784655Z Updating files:  74% (502/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9787973Z Updating files:  75% (509/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9792747Z Updating files:  76% (516/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9797177Z Updating files:  77% (523/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9802234Z Updating files:  78% (529/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9806695Z Updating files:  79% (536/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9810382Z Updating files:  80% (543/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9815663Z Updating files:  81% (550/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9819895Z Updating files:  82% (556/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9825123Z Updating files:  83% (563/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9837502Z Updating files:  84% (570/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9837761Z Updating files:  85% (577/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9839888Z Updating files:  86% (584/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9843988Z Updating files:  87% (590/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9849615Z Updating files:  88% (597/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9854115Z Updating files:  89% (604/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9857613Z Updating files:  90% (611/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9863291Z Updating files:  91% (617/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9868597Z Updating files:  92% (624/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9872863Z Updating files:  93% (631/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9878684Z Updating files:  94% (638/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9883970Z Updating files:  95% (645/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9888454Z Updating files:  96% (651/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9894875Z Updating files:  97% (658/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9897604Z Updating files:  98% (665/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9899250Z Updating files:  99% (672/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9899470Z Updating files: 100% (678/678)
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9899697Z Updating files: 100% (678/678), done.
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9912920Z Note: switching to 'eb2e7a97aa70b1d7f39968c6be9ed3e731512f9d'.
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9913176Z 
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9913348Z You are in 'detached HEAD' state. You can look around, make experimental
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9914020Z changes and commit them, and you can discard any commits you make in this
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9914417Z state without impacting any branches by switching back to a branch.
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9914640Z 
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9914797Z If you want to create a new branch to retain commits you create, you may
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9915287Z do so (now or later) by using -c with the switch command. Example:
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9915496Z 
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9915585Z   git switch -c <new-branch-name>
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9915730Z 
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9915813Z Or undo this operation with:
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9915947Z 
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9916023Z   git switch -
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9916121Z 
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9916299Z Turn off this advice by setting config variable advice.detachedHead to false
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9916556Z 
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9916714Z HEAD is now at eb2e7a9 Update EIP-4844: Remove unused constants
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9921817Z ##[endgroup]
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:16.9968713Z [command]/usr/bin/git log -1 --format=%H
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0001105Z eb2e7a97aa70b1d7f39968c6be9ed3e731512f9d
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0007956Z ##[group]Removing auth
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0008192Z Removing SSH command configuration
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0011062Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0048742Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0241295Z Removing HTTP extra header
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0243743Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0280008Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0466436Z Removing includeIf entries pointing to credentials config files
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0468552Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0499300Z includeif.gitdir:/home/runner/work/besu/besu/eips/.git.path
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0499699Z includeif.gitdir:/home/runner/work/besu/besu/eips/.git/worktrees/*.path
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0500051Z includeif.gitdir:/github/workspace/eips/.git.path
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0500381Z includeif.gitdir:/github/workspace/eips/.git/worktrees/*.path
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0505786Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/besu/besu/eips/.git.path
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0536738Z /home/runner/work/_temp/git-credentials-96f0d9db-8269-4d35-9046-a8d3273a512a.config
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0543851Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/besu/besu/eips/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-96f0d9db\-8269\-4d35\-9046\-a8d3273a512a\.config
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0582255Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/besu/besu/eips/.git/worktrees/*.path
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0611598Z /home/runner/work/_temp/git-credentials-96f0d9db-8269-4d35-9046-a8d3273a512a.config
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0617050Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/besu/besu/eips/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-96f0d9db\-8269\-4d35\-9046\-a8d3273a512a\.config
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0787390Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/eips/.git.path
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0826632Z /github/runner_temp/git-credentials-96f0d9db-8269-4d35-9046-a8d3273a512a.config
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0833693Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/eips/.git.path \/github\/runner_temp\/git\-credentials\-96f0d9db\-8269\-4d35\-9046\-a8d3273a512a\.config
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0877014Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/eips/.git/worktrees/*.path
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0911247Z /github/runner_temp/git-credentials-96f0d9db-8269-4d35-9046-a8d3273a512a.config
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0917318Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/eips/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-96f0d9db\-8269\-4d35\-9046\-a8d3273a512a\.config
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.0957771Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.1158258Z Removing credentials config '/home/runner/work/_temp/git-credentials-96f0d9db-8269-4d35-9046-a8d3273a512a.config'
+analyze	Check out pinned EIP specifications	2026-11-12T01:02:17.1165860Z ##[endgroup]
+analyze	Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	﻿2026-11-12T01:02:17.1292194Z ##[group]Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+analyze	Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	2026-11-12T01:02:17.1292414Z with:
+analyze	Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	2026-11-12T01:02:17.1292529Z   python-version: 3.12
+analyze	Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	2026-11-12T01:02:17.1292655Z   check-latest: false
+analyze	Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	2026-11-12T01:02:17.1293919Z   token: ***
+analyze	Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	2026-11-12T01:02:17.1294108Z   mirror: https://raw.githubusercontent.com/actions/python-versions/main
+analyze	Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	2026-11-12T01:02:17.1294322Z   update-environment: true
+analyze	Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	2026-11-12T01:02:17.1294459Z   allow-prereleases: false
+analyze	Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	2026-11-12T01:02:17.1294584Z   freethreaded: false
+analyze	Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	2026-11-12T01:02:17.1294698Z env:
+analyze	Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	2026-11-12T01:02:17.1294826Z   PRSPEC_REPO: https://github.com/Hardisky/PRSpec
+analyze	Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	2026-11-12T01:02:17.1295179Z   PRSPEC_COMMIT: 7cf99adc66ee843ae87061e79fa27cd294ac4fcf
+analyze	Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	2026-11-12T01:02:17.1295425Z   PRSPEC_MODELS: gemini:gemini-3.8-flash gemini:gemini-3.6-flash meta:muse-wonder-1.0
+analyze	Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	2026-11-12T01:02:17.1295639Z ##[endgroup]
+analyze	Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	2026-11-12T01:02:17.2038766Z ##[group]Installed versions
+analyze	Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	2026-11-12T01:02:17.3765622Z Successfully set up CPython (3.12.16)
+analyze	Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	2026-11-12T01:02:17.3766187Z ##[endgroup]
+analyze	Install pinned PRSpec	﻿2026-11-12T01:02:17.3869058Z ##[group]Run pip install "git+${PRSPEC_REPO}@${PRSPEC_COMMIT}"
+analyze	Install pinned PRSpec	2026-11-12T01:02:17.3869330Z ^[[36;1mpip install "git+${PRSPEC_REPO}@${PRSPEC_COMMIT}"^[[0m
+analyze	Install pinned PRSpec	2026-11-12T01:02:17.3960920Z shell: /usr/bin/bash -e {0}
+analyze	Install pinned PRSpec	2026-11-12T01:02:17.3961231Z env:
+analyze	Install pinned PRSpec	2026-11-12T01:02:17.3961476Z   PRSPEC_REPO: https://github.com/Hardisky/PRSpec
+analyze	Install pinned PRSpec	2026-11-12T01:02:17.3961814Z   PRSPEC_COMMIT: 7cf99adc66ee843ae87061e79fa27cd294ac4fcf
+analyze	Install pinned PRSpec	2026-11-12T01:02:17.3962233Z   PRSPEC_MODELS: gemini:gemini-3.8-flash gemini:gemini-3.6-flash meta:muse-wonder-1.0
+analyze	Install pinned PRSpec	2026-11-12T01:02:17.3962657Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Install pinned PRSpec	2026-11-12T01:02:17.3963047Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+analyze	Install pinned PRSpec	2026-11-12T01:02:17.3963416Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Install pinned PRSpec	2026-11-12T01:02:17.3963750Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Install pinned PRSpec	2026-11-12T01:02:17.3964085Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Install pinned PRSpec	2026-11-12T01:02:17.3964442Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+analyze	Install pinned PRSpec	2026-11-12T01:02:17.3964837Z ##[endgroup]
+analyze	Install pinned PRSpec	2026-11-12T01:02:20.3965833Z Collecting git+https://github.com/Hardisky/PRSpec@7cf99adc66ee843ae87061e79fa27cd294ac4fcf
+analyze	Install pinned PRSpec	2026-11-12T01:02:20.3969880Z   Cloning https://github.com/Hardisky/PRSpec (to revision 7cf99adc66ee843ae87061e79fa27cd294ac4fcf) to /tmp/pip-req-build-s64horof
+analyze	Install pinned PRSpec	2026-11-12T01:02:20.3987454Z   Running command git clone --filter=blob:none --quiet https://github.com/Hardisky/PRSpec /tmp/pip-req-build-s64horof
+analyze	Install pinned PRSpec	2026-11-12T01:02:21.0210229Z   Running command git rev-parse -q --verify '7cf99adc66ee843ae87061e79fa27cd294ac4fcf^{commit}'
+analyze	Install pinned PRSpec	2026-11-12T01:02:21.0224890Z   7cf99adc66ee843ae87061e79fa27cd294ac4fcf
+analyze	Install pinned PRSpec	2026-11-12T01:02:21.0239995Z   Running command git checkout -q 7cf99adc66ee843ae87061e79fa27cd294ac4fcf
+analyze	Install pinned PRSpec	2026-11-12T01:02:21.2700809Z   Resolved https://github.com/Hardisky/PRSpec to commit 7cf99adc66ee843ae87061e79fa27cd294ac4fcf
+analyze	Install pinned PRSpec	2026-11-12T01:02:21.2730582Z   Installing build dependencies: started
+analyze	Install pinned PRSpec	2026-11-12T01:02:22.6419218Z   Installing build dependencies: finished with status 'done'
+analyze	Install pinned PRSpec	2026-11-12T01:02:22.6423675Z   Getting requirements to build wheel: started
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.0412893Z   Getting requirements to build wheel: finished with status 'done'
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.0419682Z   Preparing metadata (pyproject.toml): started
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.1626111Z   Preparing metadata (pyproject.toml): finished with status 'done'
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.2572774Z Collecting google-genai>=1.51.0 (from prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.3101401Z   Downloading google_genai-3.2.0-py3-none-any.whl.metadata (60 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.3856692Z Collecting openai>=1.40.0 (from prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.3961331Z   Downloading openai-3.49.0-py3-none-any.whl.metadata (45 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.4246509Z Collecting requests (from prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.4352536Z   Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.4848078Z Collecting tree-sitter (from prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.4951017Z   Downloading tree_sitter-0.26.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (9.9 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.5329868Z Collecting tree-sitter-python (from prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.5429591Z   Downloading tree_sitter_python-0.25.0-cp310-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (1.9 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.5670423Z Collecting tree-sitter-go (from prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.5770161Z   Downloading tree_sitter_go-0.25.0-cp310-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (1.7 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.6088232Z Collecting pyyaml (from prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.6192947Z   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.6452494Z Collecting python-dotenv (from prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.6554060Z   Downloading python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.6799909Z Collecting click (from prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.6902202Z   Downloading click-8.5.1-py3-none-any.whl.metadata (2.6 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.7242787Z Collecting rich (from prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.7346983Z   Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.7661850Z Collecting gitpython (from prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.7764691Z   Downloading gitpython-3.2.1-py3-none-any.whl.metadata (13 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.8028039Z Collecting anyio<5.0.0,>=4.8.0 (from google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.8153891Z   Downloading anyio-4.16.0-py3-none-any.whl.metadata (4.7 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.8464554Z Collecting google-auth<3.0.0,>=2.56.0 (from google-auth[requests]<3.0.0,>=2.56.0->google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.8568605Z   Downloading google_auth-2.62.2-py3-none-any.whl.metadata (6.0 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.8847488Z Collecting httpx2<3.0.0,>=2.0.0 (from google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.8960334Z   Downloading httpx2-2.16.0-py3-none-any.whl.metadata (10 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.9753813Z Collecting pydantic<3.0.0,>=2.12.5 (from google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:23.9863563Z   Downloading pydantic-2.14.3-py3-none-any.whl.metadata (141 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.0216094Z Collecting tenacity<9.2.0,>=8.2.3 (from google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.0317174Z   Downloading tenacity-9.1.4-py3-none-any.whl.metadata (1.2 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.1085477Z Collecting websockets<18.0,>=13.0.0 (from google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.1189011Z   Downloading websockets-17.4-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.3 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.1412058Z Collecting typing-extensions<5.0.0,>=4.14.0 (from google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.1529411Z   Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.1749162Z Collecting distro<2,>=1.7.0 (from google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.1855226Z   Downloading distro-1.9.0-py3-none-any.whl.metadata (6.8 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.2213413Z Collecting sniffio (from google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.2314910Z   Downloading sniffio-1.3.1-py3-none-any.whl.metadata (3.9 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.2541221Z Collecting idna>=2.8 (from anyio<5.0.0,>=4.8.0->google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.2672075Z   Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.2919210Z Collecting pyasn1-modules>=0.2.1 (from google-auth<3.0.0,>=2.56.0->google-auth[requests]<3.0.0,>=2.56.0->google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.3023315Z   Downloading pyasn1_modules-0.4.2-py3-none-any.whl.metadata (3.5 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.4055879Z Collecting cryptography>=38.0.3 (from google-auth<3.0.0,>=2.56.0->google-auth[requests]<3.0.0,>=2.56.0->google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.4158435Z   Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl.metadata (4.4 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.4477054Z Collecting httpcore2==2.16.0 (from httpx2<3.0.0,>=2.0.0->google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.4579286Z   Downloading httpcore2-2.16.0-py3-none-any.whl.metadata (27 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.4795431Z Collecting truststore>=0.10 (from httpx2<3.0.0,>=2.0.0->google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.4910670Z   Downloading truststore-0.10.5-py3-none-any.whl.metadata (4.5 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.5175457Z Collecting h11>=0.16 (from httpcore2==2.16.0->httpx2<3.0.0,>=2.0.0->google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.5286509Z   Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.5556949Z Collecting annotated-types>=0.6.0 (from pydantic<3.0.0,>=2.12.5->google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.5675455Z   Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.9611217Z Collecting pydantic-core==2.50.4 (from pydantic<3.0.0,>=2.12.5->google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.9715921Z   Downloading pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.6 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:24.9950140Z Collecting typing-inspection>=0.4.4 (from pydantic<3.0.0,>=2.12.5->google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.0050729Z   Downloading typing_inspection-0.4.5-py3-none-any.whl.metadata (2.6 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.1024590Z Collecting charset_normalizer<4,>=2 (from requests->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.1132567Z   Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (46 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.1419793Z Collecting urllib3<3,>=1.26 (from requests->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.1519530Z   Downloading urllib3-2.8.0-py3-none-any.whl.metadata (7.4 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.1801870Z Collecting certifi>=2023.5.7 (from requests->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.1903869Z   Downloading certifi-2026.10.23-py3-none-any.whl.metadata (2.5 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.2597453Z Collecting cffi>=2.0.0 (from cryptography>=38.0.3->google-auth<3.0.0,>=2.56.0->google-auth[requests]<3.0.0,>=2.56.0->google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.2722693Z   Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.5 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.2965716Z Collecting pycparser (from cffi>=2.0.0->cryptography>=38.0.3->google-auth<3.0.0,>=2.56.0->google-auth[requests]<3.0.0,>=2.56.0->google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.3066796Z   Downloading pycparser-3.12-py3-none-any.whl.metadata (9.7 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.3907220Z Collecting jiter<1,>=0.16.0 (from openai>=1.40.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.4045453Z   Downloading jiter-0.19.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.4380336Z Collecting pyasn1<0.7.0,>=0.6.1 (from pyasn1-modules>=0.2.1->google-auth<3.0.0,>=2.56.0->google-auth[requests]<3.0.0,>=2.56.0->google-genai>=1.51.0->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.4483151Z   Downloading pyasn1-0.6.5-py3-none-any.whl.metadata (8.4 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.4791895Z Collecting gitdb<5,>=4.0.1 (from gitpython->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.4893111Z   Downloading gitdb-4.0.12-py3-none-any.whl.metadata (1.2 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.5635413Z Collecting smmap<6,>=3.0.1 (from gitdb<5,>=4.0.1->gitpython->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.5734032Z   Downloading smmap-5.0.3-py3-none-any.whl.metadata (4.6 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.6535444Z Collecting markdown-it-py>=2.2.0 (from rich->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.6637352Z   Downloading markdown_it_py-4.3.0-py3-none-any.whl.metadata (7.9 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.7400107Z Collecting pygments<3.0.0,>=2.13.0 (from rich->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.7512338Z   Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.8286285Z Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->prspec==2.0.0)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.8401989Z   Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.8543520Z Downloading google_genai-3.2.0-py3-none-any.whl (1.4 MB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.8789800Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 77.6 MB/s  0:00:00
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.8893685Z Downloading anyio-4.16.0-py3-none-any.whl (134 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.9026064Z Downloading distro-1.9.0-py3-none-any.whl (20 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.9157484Z Downloading google_auth-2.62.2-py3-none-any.whl (270 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.9282708Z Downloading httpx2-2.16.0-py3-none-any.whl (97 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.9400238Z Downloading httpcore2-2.16.0-py3-none-any.whl (85 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.9532680Z Downloading pydantic-2.14.3-py3-none-any.whl (494 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.9662743Z Downloading pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.3 MB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.9813634Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.3/2.3 MB 146.3 MB/s  0:00:00
+analyze	Install pinned PRSpec	2026-11-12T01:02:25.9918448Z Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.0035326Z Downloading charset_normalizer-3.5.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (257 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.0224774Z Downloading idna-3.20-py3-none-any.whl (69 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.0348086Z Downloading tenacity-9.1.4-py3-none-any.whl (28 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.0463834Z Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.0584391Z Downloading urllib3-2.8.0-py3-none-any.whl (135 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.0715568Z Downloading websockets-17.4-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (226 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.0832558Z Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.0948720Z Downloading certifi-2026.10.23-py3-none-any.whl (135 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.1068277Z Downloading cryptography-50.0.2-cp311-abi3-manylinux_2_34_x86_64.whl (4.8 MB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.1314210Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 194.7 MB/s  0:00:00
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.1418836Z Downloading cffi-2.1.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.1537807Z Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.1665217Z Downloading openai-3.49.0-py3-none-any.whl (2.4 MB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.1810215Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 174.0 MB/s  0:00:00
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.1912376Z Downloading jiter-0.19.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (338 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.2035074Z Downloading pyasn1_modules-0.4.2-py3-none-any.whl (181 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.2152328Z Downloading pyasn1-0.6.5-py3-none-any.whl (84 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.2271032Z Downloading truststore-0.10.5-py3-none-any.whl (19 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.2577762Z Downloading typing_inspection-0.4.5-py3-none-any.whl (14 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.2693296Z Downloading click-8.5.1-py3-none-any.whl (126 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.2819702Z Downloading gitpython-3.2.1-py3-none-any.whl (231 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.2947770Z Downloading gitdb-4.0.12-py3-none-any.whl (62 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.3074289Z Downloading smmap-5.0.3-py3-none-any.whl (24 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.3188201Z Downloading pycparser-3.12-py3-none-any.whl (62 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.3303883Z Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.3416999Z Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.3461500Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 180.9 MB/s  0:00:00
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.3562099Z Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.3684118Z Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.3733334Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 320.4 MB/s  0:00:00
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.3834518Z Downloading markdown_it_py-4.3.0-py3-none-any.whl (96 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.3951896Z Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.4066783Z Downloading sniffio-1.3.1-py3-none-any.whl (10 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.4189230Z Downloading tree_sitter-0.26.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (678 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.4221547Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 678.5/678.5 kB 203.7 MB/s  0:00:00
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.4322238Z Downloading tree_sitter_go-0.25.0-cp310-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (66 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.4441674Z Downloading tree_sitter_python-0.25.0-cp310-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (108 kB)
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.5205090Z Building wheels for collected packages: prspec
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.5242099Z   Building wheel for prspec (pyproject.toml): started
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.6587528Z   Building wheel for prspec (pyproject.toml): finished with status 'done'
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.6591534Z   Created wheel for prspec: filename=prspec-2.0.0-py3-none-any.whl size=81382 sha256=7f488fc9b93fffde539feb544ea658e6d40344b0fa3831e57b4b548fa21f9d43
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.6592677Z   Stored in directory: /home/runner/.cache/pip/wheels/43/ea/f4/4f5f12c372ad49c549abc285ffdd2483a8b17fafecc31d0045
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.6609598Z Successfully built prspec
+analyze	Install pinned PRSpec	2026-11-12T01:02:26.7109536Z Installing collected packages: websockets, urllib3, typing-extensions, truststore, tree-sitter-python, tree-sitter-go, tree-sitter, tenacity, sniffio, smmap, pyyaml, python-dotenv, pygments, pycparser, pyasn1, mdurl, jiter, idna, h11, distro, click, charset_normalizer, certifi, annotated-types, typing-inspection, requests, pydantic-core, pyasn1-modules, markdown-it-py, httpcore2, gitdb, cffi, anyio, rich, pydantic, httpx2, gitpython, cryptography, openai, google-auth, google-genai, prspec
+analyze	Install pinned PRSpec	2026-11-12T01:02:30.4863779Z 
+analyze	Install pinned PRSpec	2026-11-12T01:02:30.4885836Z Successfully installed annotated-types-0.8.0 anyio-4.16.0 certifi-2026.10.23 cffi-2.1.1 charset_normalizer-3.5.2 click-8.5.1 cryptography-50.0.2 distro-1.9.0 gitdb-4.0.12 gitpython-3.2.1 google-auth-2.62.2 google-genai-3.2.0 h11-0.16.0 httpcore2-2.16.0 httpx2-2.16.0 idna-3.20 jiter-0.19.0 markdown-it-py-4.3.0 mdurl-0.1.2 openai-3.49.0 prspec-2.0.0 pyasn1-0.6.5 pyasn1-modules-0.4.2 pycparser-3.12 pydantic-2.14.3 pydantic-core-2.50.4 pygments-2.21.0 python-dotenv-1.2.4 pyyaml-6.0.3 requests-2.34.2 rich-15.0.0 smmap-5.0.3 sniffio-1.3.1 tenacity-9.1.4 tree-sitter-0.26.1 tree-sitter-go-0.25.0 tree-sitter-python-0.25.0 truststore-0.10.5 typing-extensions-4.16.0 typing-inspection-0.4.5 urllib3-2.8.0 websockets-17.4
+analyze	Install pinned PRSpec	2026-11-12T01:02:30.4892479Z 
+analyze	Install pinned PRSpec	2026-11-12T01:02:30.4892704Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+analyze	Install pinned PRSpec	2026-11-12T01:02:30.4893039Z [notice] To update, run: pip install --upgrade pip
+analyze	Write the pilot config (trusted copy, not from the PR)	﻿2026-11-12T01:02:30.6351547Z ##[group]Run cat > config.yaml <<'CFG'
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6351785Z ^[[36;1mcat > config.yaml <<'CFG'^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6352001Z ^[[36;1m# PRSpec configuration for the Besu pilot. The pilot workflow writes this^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6352283Z ^[[36;1m# exact content at run time (it is never read from the PR under review).^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6352491Z ^[[36;1mllm:^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6352606Z ^[[36;1m  provider: gemini^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6352736Z ^[[36;1m  gemini:^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6352857Z ^[[36;1m    model: gemini-3.8-flash^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6353150Z ^[[36;1m    max_output_tokens: 32768^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6353285Z ^[[36;1m  meta:^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6353404Z ^[[36;1m    model: muse-wonder-1.0^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6353572Z ^[[36;1m    base_url: https://api.meta.ai/v1^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6353733Z ^[[36;1m    max_tokens: 16384^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6353862Z ^[[36;1m^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6353966Z ^[[36;1meips:^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6354071Z ^[[36;1m  1559:^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6354232Z ^[[36;1m    title: "Fee market change for ETH 1.0 chain"^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6354400Z ^[[36;1m    focus_areas:^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6354534Z ^[[36;1m      - base_fee_calculation^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6354683Z ^[[36;1m      - gas_limit_validation^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6354827Z ^[[36;1m      - fee_cap_check^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6355070Z ^[[36;1m      - priority_fee_handling^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6355223Z ^[[36;1m      - transaction_validation^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6355382Z ^[[36;1m      - base_fee_burn_destination^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6355529Z ^[[36;1m  4844:^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6355653Z ^[[36;1m    title: "Shard Blob Transactions"^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6355804Z ^[[36;1m    focus_areas:^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6355944Z ^[[36;1m      - blob_gas_price_calculation^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6356107Z ^[[36;1m      - excess_blob_gas_update^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6356258Z ^[[36;1m      - kzg_commitment_validation^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6356411Z ^[[36;1m      - max_blobs_per_block_check^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6356566Z ^[[36;1m      - blob_transaction_validation^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6356732Z ^[[36;1m      - point_evaluation_precompile^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6356877Z ^[[36;1m^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6356978Z ^[[36;1manalysis:^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6357096Z ^[[36;1m  focus_areas:^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6357229Z ^[[36;1m    - specification_compliance^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6357377Z ^[[36;1m    - edge_case_handling^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6357519Z ^[[36;1m    - validation_checks^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6357667Z ^[[36;1m    - security_implications^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6357801Z ^[[36;1m^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6357903Z ^[[36;1moutput:^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6358015Z ^[[36;1m  format: json^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6358140Z ^[[36;1m  directory: output^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6358277Z ^[[36;1m  include_code_snippets: true^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6358432Z ^[[36;1m  include_spec_references: true^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6358574Z ^[[36;1mCFG^[[0m
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6374644Z shell: /usr/bin/bash -e {0}
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6374780Z env:
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6374917Z   PRSPEC_REPO: https://github.com/Hardisky/PRSpec
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6375250Z   PRSPEC_COMMIT: 7cf99adc66ee843ae87061e79fa27cd294ac4fcf
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6375524Z   PRSPEC_MODELS: gemini:gemini-3.8-flash gemini:gemini-3.6-flash meta:muse-wonder-1.0
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6375792Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6376020Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6376249Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6376454Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6376657Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6376868Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+analyze	Write the pilot config (trusted copy, not from the PR)	2026-11-12T01:02:30.6377045Z ##[endgroup]
+analyze	Pick EIPs touched by this PR	﻿2026-11-12T01:02:30.6441327Z ##[group]Run gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/files" --paginate --jq '.[].filename' > changed.txt
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6441724Z ^[[36;1mgh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/files" --paginate --jq '.[].filename' > changed.txt^[[0m
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6441994Z ^[[36;1mpython - <<'PY' >> "$GITHUB_OUTPUT"^[[0m
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6442168Z ^[[36;1mfrom src.code_fetcher import CodeFetcher^[[0m
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6442366Z ^[[36;1mchanged = set(open("changed.txt").read().split())^[[0m
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6442571Z ^[[36;1mreg = CodeFetcher.CLIENTS["besu"]["eip_files"]^[[0m
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6442786Z ^[[36;1meips = [str(e) for e in (1559, 4844) if changed & set(reg[e])]^[[0m
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6443108Z ^[[36;1mprint("list=" + " ".join(eips))^[[0m
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6443252Z ^[[36;1mPY^[[0m
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6457124Z shell: /usr/bin/bash -e {0}
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6457263Z env:
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6457403Z   PRSPEC_REPO: https://github.com/Hardisky/PRSpec
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6457610Z   PRSPEC_COMMIT: 7cf99adc66ee843ae87061e79fa27cd294ac4fcf
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6457888Z   PRSPEC_MODELS: gemini:gemini-3.8-flash gemini:gemini-3.6-flash meta:muse-wonder-1.0
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6458141Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6458366Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6458612Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6458817Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6459021Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6459236Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6460815Z   GH_TOKEN: ***
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6460928Z   PR: 1
+analyze	Pick EIPs touched by this PR	2026-11-12T01:02:30.6461038Z ##[endgroup]
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	﻿2026-11-12T01:02:31.6192875Z ##[group]Run mkdir -p output/attempts
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6193105Z ^[[36;1mmkdir -p output/attempts^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6193293Z ^[[36;1mprintf 'eip\tmodel\tresult\n' > output/attempts.tsv^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6193473Z ^[[36;1mstatus=0^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6193593Z ^[[36;1mfor eip in $EIPS; do^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6193728Z ^[[36;1m  complete=0^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6193866Z ^[[36;1m  for candidate in $PRSPEC_MODELS; do^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6194064Z ^[[36;1m    provider="${candidate%%:*}"; model="${candidate#*:}"^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6194251Z ^[[36;1m    case "$provider" in^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6194456Z ^[[36;1m      gemini) have="${GEMINI_API_KEY:+yes}"; export GEMINI_MODEL="$model" ;;^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6194719Z ^[[36;1m      meta)   have="${MODEL_API_KEY:+yes}";  export META_MODEL="$model" ;;^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6194935Z ^[[36;1m      *)      have="" ;;^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6195224Z ^[[36;1m    esac^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6195346Z ^[[36;1m    if [ -z "$have" ]; then^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6195621Z ^[[36;1m      printf '%s\t%s\tskipped: no secret configured\n' "$eip" "$candidate" >> output/attempts.tsv^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6195866Z ^[[36;1m      continue^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6195990Z ^[[36;1m    fi^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6196099Z ^[[36;1m    rc=0^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6196278Z ^[[36;1m    prspec analyze --eip "$eip" --client besu --source-dir pr-src \^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6196520Z ^[[36;1m      --ref "$SHA" --spec-file "eips/EIPS/eip-${eip}.md" \^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6196740Z ^[[36;1m      --multi-file --no-verify --provider "$provider" \^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6196968Z ^[[36;1m      --output json,markdown,html --fail-on incomplete || rc=$?^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6197225Z ^[[36;1m    printf '%s\t%s\texit %s\n' "$eip" "$candidate" "$rc" >> output/attempts.tsv^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6197458Z ^[[36;1m    if [ "$rc" = 0 ]; then complete=1; break; fi^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6197644Z ^[[36;1m    for f in output/prspec_eip${eip}_*; do^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6197851Z ^[[36;1m      if [ -f "$f" ]; then mv "$f" "output/attempts/${model}-${f##*/}"; fi^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6198044Z ^[[36;1m    done^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6198154Z ^[[36;1m  done^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6198288Z ^[[36;1m  if [ "$complete" != 1 ]; then status=20; fi^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6198442Z ^[[36;1mdone^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6198580Z ^[[36;1mecho "exit_status=$status" >> "$GITHUB_ENV"^[[0m
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6215402Z shell: /usr/bin/bash -e {0}
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6215541Z env:
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6215686Z   PRSPEC_REPO: https://github.com/Hardisky/PRSpec
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6215895Z   PRSPEC_COMMIT: 7cf99adc66ee843ae87061e79fa27cd294ac4fcf
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6216150Z   PRSPEC_MODELS: gemini:gemini-3.8-flash gemini:gemini-3.6-flash meta:muse-wonder-1.0
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6216406Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6216772Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6217003Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6217213Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6217416Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6217624Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6217962Z   GEMINI_API_KEY: ***
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6218133Z   MODEL_API_KEY: ***
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6218253Z   EIPS: 4844
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6218382Z   SHA: b695210e13fbbd1b1e5e255df60fa6b50e4b68e2
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.6218570Z ##[endgroup]
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7678761Z 
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7679708Z   ██████╗ ██████╗ ███████╗██████╗ ███████╗ ██████╗
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7680018Z   ██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔════╝██╔════╝
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7680230Z   ██████╔╝██████╔╝███████╗██████╔╝█████╗  ██║
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7680476Z   ██╔═══╝ ██╔══██╗╚════██║██╔═══╝ ██╔══╝  ██║
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7680682Z   ██║     ██║  ██║███████║██║     ███████╗╚██████╗
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7680882Z   ╚═╝     ╚═╝  ╚═╝╚══════╝╚═╝     ╚══════╝ ╚═════╝
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7681424Z 
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7693028Z ╭─────────────────────────────── Configuration ────────────────────────────────╮
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7693407Z │   EIP         4844                                                           │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7693690Z │   Client      besu                                                           │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7693943Z │   Provider    gemini                                                         │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7694215Z │   Model       gemini-3.8-flash                                               │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7694510Z │   Code        pr-src @ b695210e13fbbd1b1e5e255df60fa6b50e4b68e2              │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7694791Z │   Spec        eips/EIPS/eip-4844.md                                          │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7695233Z │   Output      json,markdown,html                                             │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7695494Z │   Verify      off                                                            │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7695767Z ╰──────────────────────────────────────────────────────────────────────────────╯
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:31.7695907Z 
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.4691197Z Joint context: these sources are sent together in one model request             
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.4691995Z ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┓
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.4692444Z ┃ Source                                         ┃  Bytes ┃ SHA-256 (first 16) ┃
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.4692893Z ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━┩
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.4693595Z │ ethereum/blockcreation/src/main/java/org/hype… │ 25,835 │ 429cb1c7ab1a758a   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.4694141Z │ evm/src/main/java/org/hyperledger/besu/evm/ga… │  2,021 │ 08d4664783d39dbe   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.4695203Z │ ethereum/core/src/main/java/org/hyperledger/b… │  1,769 │ b1d97ada782429e0   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.4695753Z │ datatypes/src/main/java/org/hyperledger/besu/… │  3,378 │ 6c6cf5d76f3d5766   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.4696322Z │ ethereum/core/src/main/java/org/hyperledger/b… │  3,543 │ 0de0a13720f7734a   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.4696864Z │ evm/src/main/java/org/hyperledger/besu/evm/pr… │ 11,671 │ 3d2ce089795acf2d   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.4697398Z │ ethereum/core/src/main/java/org/hyperledger/b… │  2,711 │ 6d685a184ef72bec   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.4697932Z │ ethereum/core/src/main/java/org/hyperledger/b… │  2,745 │ 71c56ac30b1a3818   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.4698455Z │ spec: eips/EIPS/eip-4844.md                    │ 23,891 │ ef1316135b93e7ca   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.4698943Z └────────────────────────────────────────────────┴────────┴────────────────────┘
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6123548Z   Joint analysis of 8 files in one model request ━━━━━━━━━━━━━━━━━━━ 1/1 0:00:00
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6133813Z ╭───────────────────────────── Executive Summary ──────────────────────────────╮
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6134211Z │                                                                              │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6134641Z │  PRSpec reported 1 analysis unit for besu's EIP-4844 implementation using    │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6135488Z │  Gemini (gemini-3.8-flash). Overall status: INCOMPLETE. Average              │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6135971Z │  model-reported confidence: 0% (not a calibrated probability). Analysis      │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6136445Z │  incomplete; no clean conclusion can be drawn.                               │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6136840Z │                                                                              │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6137117Z │  Multi-file context — ERROR (0 issues): Gemini analysis failed:              │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6137425Z │  ClientError: 401 UNAUTHENTICATED. {'error': {'code': 401, 'message': 'API   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6137710Z │  key not valid. Please                                                       │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6137958Z │                                                                              │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6138212Z ╰──────────────────────────────────────────────────────────────────────────────╯
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6145477Z   EIP-4844 Compliance Report -  
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6145706Z               besu              
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6145877Z ╭─────────────────┬────────────╮
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6146039Z │ Metric          │ Value      │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6146202Z ├─────────────────┼────────────┤
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6146361Z │ Overall Status  │ INCOMPLETE │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6146524Z │ Confidence      │ 0%         │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6146679Z │ Analysis units  │ 1          │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6146838Z │ Total Issues    │ 0          │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6146992Z │ High Severity   │ 0          │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6147152Z │ Medium Severity │ 0          │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6147307Z │ Low Severity    │ 0          │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6147629Z ╰─────────────────┴────────────╯
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6148517Z Code commit: b695210e13fbbd1b1e5e255df60fa6b50e4b68e2 · Spec SHA-256: 
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6148786Z ef1316135b93e7ca
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6148914Z 
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6152245Z ✓ Report saved to: output/prspec_eip4844_besu_20261112_010232.json
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6154568Z ✓ Report saved to: output/prspec_eip4844_besu_20261112_010232.md
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6157085Z ✓ Report saved to: output/prspec_eip4844_besu_20261112_010232.html
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.6159830Z ANALYSIS INCOMPLETE: 1 of 1 analysis unit(s) failed: Multi-file context
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8395394Z 
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8396292Z   ██████╗ ██████╗ ███████╗██████╗ ███████╗ ██████╗
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8396749Z   ██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔════╝██╔════╝
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8397092Z   ██████╔╝██████╔╝███████╗██████╔╝█████╗  ██║
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8397420Z   ██╔═══╝ ██╔══██╗╚════██║██╔═══╝ ██╔══╝  ██║
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8397750Z   ██║     ██║  ██║███████║██║     ███████╗╚██████╗
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8398144Z   ╚═╝     ╚═╝  ╚═╝╚══════╝╚═╝     ╚══════╝ ╚═════╝
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8398328Z 
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8410217Z ╭─────────────────────────────── Configuration ────────────────────────────────╮
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8411093Z │   EIP         4844                                                           │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8411499Z │   Client      besu                                                           │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8411920Z │   Provider    gemini                                                         │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8412343Z │   Model       gemini-3.6-flash                                               │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8412784Z │   Code        pr-src @ b695210e13fbbd1b1e5e255df60fa6b50e4b68e2              │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8413097Z │   Spec        eips/EIPS/eip-4844.md                                          │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8413532Z │   Output      json,markdown,html                                             │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8413983Z │   Verify      off                                                            │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8414411Z ╰──────────────────────────────────────────────────────────────────────────────╯
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:32.8414628Z 
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.0933639Z Joint context: these sources are sent together in one model request             
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.0934513Z ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┓
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.0935132Z ┃ Source                                         ┃  Bytes ┃ SHA-256 (first 16) ┃
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.0935593Z ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━┩
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.0936110Z │ ethereum/blockcreation/src/main/java/org/hype… │ 25,835 │ 429cb1c7ab1a758a   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.0936665Z │ evm/src/main/java/org/hyperledger/besu/evm/ga… │  2,021 │ 08d4664783d39dbe   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.0937197Z │ ethereum/core/src/main/java/org/hyperledger/b… │  1,769 │ b1d97ada782429e0   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.0938170Z │ datatypes/src/main/java/org/hyperledger/besu/… │  3,378 │ 6c6cf5d76f3d5766   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.0938715Z │ ethereum/core/src/main/java/org/hyperledger/b… │  3,543 │ 0de0a13720f7734a   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.0939267Z │ evm/src/main/java/org/hyperledger/besu/evm/pr… │ 11,671 │ 3d2ce089795acf2d   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.0939837Z │ ethereum/core/src/main/java/org/hyperledger/b… │  2,711 │ 6d685a184ef72bec   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.0940391Z │ ethereum/core/src/main/java/org/hyperledger/b… │  2,745 │ 71c56ac30b1a3818   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.0940911Z │ spec: eips/EIPS/eip-4844.md                    │ 23,891 │ ef1316135b93e7ca   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.0941400Z └────────────────────────────────────────────────┴────────┴────────────────────┘
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2077007Z   Joint analysis of 8 files in one model request ━━━━━━━━━━━━━━━━━━━ 1/1 0:00:00
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2086766Z ╭───────────────────────────── Executive Summary ──────────────────────────────╮
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2087207Z │                                                                              │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2087710Z │  PRSpec reported 1 analysis unit for besu's EIP-4844 implementation using    │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2088243Z │  Gemini (gemini-3.6-flash). Overall status: INCOMPLETE. Average              │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2088998Z │  model-reported confidence: 0% (not a calibrated probability). Analysis      │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2089503Z │  incomplete; no clean conclusion can be drawn.                               │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2089920Z │                                                                              │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2090342Z │  Multi-file context — ERROR (0 issues): Gemini analysis failed:              │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2090831Z │  ClientError: 401 UNAUTHENTICATED. {'error': {'code': 401, 'message': 'API   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2091291Z │  key not valid. Please                                                       │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2091675Z │                                                                              │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2092095Z ╰──────────────────────────────────────────────────────────────────────────────╯
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2099926Z   EIP-4844 Compliance Report -  
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2100173Z               besu              
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2100458Z ╭─────────────────┬────────────╮
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2100702Z │ Metric          │ Value      │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2100949Z ├─────────────────┼────────────┤
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2101185Z │ Overall Status  │ INCOMPLETE │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2101429Z │ Confidence      │ 0%         │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2101666Z │ Analysis units  │ 1          │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2101912Z │ Total Issues    │ 0          │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2102154Z │ High Severity   │ 0          │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2102397Z │ Medium Severity │ 0          │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2102637Z │ Low Severity    │ 0          │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2102914Z ╰─────────────────┴────────────╯
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2103431Z Code commit: b695210e13fbbd1b1e5e255df60fa6b50e4b68e2 · Spec SHA-256: 
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2103950Z ef1316135b93e7ca
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2104064Z 
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2107280Z ✓ Report saved to: output/prspec_eip4844_besu_20261112_010233.json
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2109336Z ✓ Report saved to: output/prspec_eip4844_besu_20261112_010233.md
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2111345Z ✓ Report saved to: output/prspec_eip4844_besu_20261112_010233.html
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.2113785Z ANALYSIS INCOMPLETE: 1 of 1 analysis unit(s) failed: Multi-file context
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4626323Z 
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4627281Z   ██████╗ ██████╗ ███████╗██████╗ ███████╗ ██████╗
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4627719Z   ██╔══██╗██╔══██╗██╔════╝██╔══██╗██╔════╝██╔════╝
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4628059Z   ██████╔╝██████╔╝███████╗██████╔╝█████╗  ██║
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4628474Z   ██╔═══╝ ██╔══██╗╚════██║██╔═══╝ ██╔══╝  ██║
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4628793Z   ██║     ██║  ██║███████║██║     ███████╗╚██████╗
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4629120Z   ╚═╝     ╚═╝  ╚═╝╚══════╝╚═╝     ╚══════╝ ╚═════╝
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4629296Z 
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4641532Z ╭─────────────────────────────── Configuration ────────────────────────────────╮
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4642022Z │   EIP         4844                                                           │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4642471Z │   Client      besu                                                           │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4643708Z │   Provider    meta                                                           │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4659371Z │   Model       muse-wonder-1.0                                                │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4660084Z │   Code        pr-src @ b695210e13fbbd1b1e5e255df60fa6b50e4b68e2              │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4660560Z │   Spec        eips/EIPS/eip-4844.md                                          │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4661002Z │   Output      json,markdown,html                                             │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4661414Z │   Verify      off                                                            │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4661852Z ╰──────────────────────────────────────────────────────────────────────────────╯
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.4662110Z 
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.7385722Z Joint context: these sources are sent together in one model request             
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.7386403Z ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┓
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.7386727Z ┃ Source                                         ┃  Bytes ┃ SHA-256 (first 16) ┃
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.7386993Z ┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━┩
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.7387313Z │ ethereum/blockcreation/src/main/java/org/hype… │ 25,835 │ 429cb1c7ab1a758a   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.7387932Z │ evm/src/main/java/org/hyperledger/besu/evm/ga… │  2,021 │ 08d4664783d39dbe   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.7388387Z │ ethereum/core/src/main/java/org/hyperledger/b… │  1,769 │ b1d97ada782429e0   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.7388861Z │ datatypes/src/main/java/org/hyperledger/besu/… │  3,378 │ 6c6cf5d76f3d5766   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.7389312Z │ ethereum/core/src/main/java/org/hyperledger/b… │  3,543 │ 0de0a13720f7734a   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.7390140Z │ evm/src/main/java/org/hyperledger/besu/evm/pr… │ 11,671 │ 3d2ce089795acf2d   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.7390598Z │ ethereum/core/src/main/java/org/hyperledger/b… │  2,711 │ 6d685a184ef72bec   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.7391073Z │ ethereum/core/src/main/java/org/hyperledger/b… │  2,745 │ 71c56ac30b1a3818   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.7391520Z │ spec: eips/EIPS/eip-4844.md                    │ 23,891 │ ef1316135b93e7ca   │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:02:33.7391956Z └────────────────────────────────────────────────┴────────┴────────────────────┘
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5136180Z   Joint analysis of 8 files in one model request ━━━━━━━━━━━━━━━━━━━ 1/1 0:01:41
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5147416Z ╭───────────────────────────── Executive Summary ──────────────────────────────╮
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5148972Z │                                                                              │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5149467Z │  PRSpec reported 1 analysis unit for besu's EIP-4844 implementation using    │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5149973Z │  Meta (muse-wonder-1.0). Overall status: NO FINDINGS. Average                │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5150280Z │  model-reported confidence: 92% (not a calibrated probability). No           │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5150782Z │  candidate findings were reported for the analysed material; this is not     │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5151062Z │  proof of compliance.                                                        │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5151296Z │                                                                              │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5151553Z │  Multi-file context — FULL_MATCH (0 issues): The provided implementations    │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5151847Z │  match EIP-4844 for blob gas pricing, excess blob gas calculation, blob gas  │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5152116Z │  limits, and the                                                             │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5152336Z │                                                                              │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5152586Z ╰──────────────────────────────────────────────────────────────────────────────╯
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5160408Z EIP-4844 Compliance Report - besu
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5160676Z ╭─────────────────┬─────────────╮
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5160928Z │ Metric          │ Value       │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5161171Z ├─────────────────┼─────────────┤
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5161326Z │ Overall Status  │ NO FINDINGS │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5161485Z │ Confidence      │ 92%         │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5161642Z │ Analysis units  │ 1           │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5161791Z │ Total Issues    │ 0           │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5161941Z │ High Severity   │ 0           │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5162099Z │ Medium Severity │ 0           │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5162248Z │ Low Severity    │ 0           │
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5162404Z ╰─────────────────┴─────────────╯
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5164913Z Code commit: b695210e13fbbd1b1e5e255df60fa6b50e4b68e2 · Spec SHA-256: 
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5165498Z ef1316135b93e7ca · Model version: muse-wonder-1.0 · Tokens: input 17,953, output
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5166071Z 8,895 · Model latency: 100.77 s
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5166206Z 
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5169030Z ✓ Report saved to: output/prspec_eip4844_besu_20261112_010414.json
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5171202Z ✓ Report saved to: output/prspec_eip4844_besu_20261112_010414.md
+analyze	Run PRSpec (one joint request per EIP; first complete model wins; never blocks)	2026-11-12T01:04:14.5173117Z ✓ Report saved to: output/prspec_eip4844_besu_20261112_010414.html
+analyze	Job summary	﻿2026-11-12T01:04:14.6973546Z ##[group]Run python3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+analyze	Job summary	2026-11-12T01:04:14.6973832Z ^[[36;1mpython3 - <<'PY' >> "$GITHUB_STEP_SUMMARY"^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6974013Z ^[[36;1mimport csv, glob, json, os, subprocess^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6974166Z ^[[36;1m^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6974273Z ^[[36;1mdef head(path):^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6974455Z ^[[36;1m    out = subprocess.run(["git", "-C", path, "rev-parse", "HEAD"],^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6974695Z ^[[36;1m                         capture_output=True, text=True).stdout.strip()^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6974881Z ^[[36;1m    return out[:12] or "?"^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6975192Z ^[[36;1m^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6975327Z ^[[36;1mstatus = os.environ.get("exit_status", "not-run")^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6975535Z ^[[36;1mprint("## PRSpec pilot (advisory, non-blocking)")^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6975790Z ^[[36;1mprint(f"PR #{os.environ.get('PR') or '?'} · head `{os.environ.get('SHA') or '?'}` · "^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6976049Z ^[[36;1m      f"EIPs: {os.environ.get('EIPS') or 'none touched'}")^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6976354Z ^[[36;1mprint(f"\nPRSpec `{os.environ['PRSPEC_COMMIT'][:12]}` · ethereum/EIPs `{head('eips')}` · "^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6976609Z ^[[36;1m      f"checked-out PR files `{head('pr-src')}`")^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6976780Z ^[[36;1mif status != "0":^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6976997Z ^[[36;1m    print(f"\n> ⚠️ Analysis incomplete or failed (exit: {status}). Treat as no signal.")^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6977246Z ^[[36;1mif os.path.exists("output/attempts.tsv"):^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6977473Z ^[[36;1m    rows = list(csv.reader(open("output/attempts.tsv"), delimiter="\t"))[1:]^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6977688Z ^[[36;1m    if rows:^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6977851Z ^[[36;1m        print("\n| EIP | Model attempt | Result |\n|---|---|---|")^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6978047Z ^[[36;1m        for eip, model, result in rows:^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6978224Z ^[[36;1m            print(f"| {eip} | `{model}` | {result} |")^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6978433Z ^[[36;1mfor path in sorted(glob.glob("output/prspec_eip*.json")):^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6978633Z ^[[36;1m    data = json.load(open(path))^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6978791Z ^[[36;1m    for r in data.get("results", []):^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6978951Z ^[[36;1m        meta = r.get("meta") or {}^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6979154Z ^[[36;1m        usage = ", ".join(f"{k.replace('_token_count', '')} {meta[k]}" for k in (^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6979421Z ^[[36;1m            "prompt_token_count", "candidates_token_count", "thoughts_token_count")^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6979630Z ^[[36;1m            if k in meta)^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6979855Z ^[[36;1m        print(f"\n**{os.path.basename(path)}**: {data.get('metadata', {}).get('analyzer', '?')}"^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6980136Z ^[[36;1m              f" · status {r.get('status')} · {len(r.get('issues', []))} issue(s)"^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6980355Z ^[[36;1m              + (f" · tokens: {usage}" if usage else ""))^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6980531Z ^[[36;1m        if r.get("source_sha256"):^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6980746Z ^[[36;1m            print("\n<details><summary>Files sent together (SHA-256)</summary>\n")^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6980975Z ^[[36;1m            for p, h in r["source_sha256"].items():^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6981150Z ^[[36;1m                print(f"- `{p}` `{h[:16]}`")^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6981310Z ^[[36;1m            print("\n</details>")^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6981491Z ^[[36;1mreports = sorted(glob.glob("output/prspec_eip*.md"))^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6981669Z ^[[36;1mfor md in reports:^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6981802Z ^[[36;1m    print("\n---\n")^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6982091Z ^[[36;1m    print(open(md).read())^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6982230Z ^[[36;1mif not reports:^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6982365Z ^[[36;1m    print("\nNo report produced.")^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6982507Z ^[[36;1mPY^[[0m
+analyze	Job summary	2026-11-12T01:04:14.6998544Z shell: /usr/bin/bash -e {0}
+analyze	Job summary	2026-11-12T01:04:14.6998684Z env:
+analyze	Job summary	2026-11-12T01:04:14.6998826Z   PRSPEC_REPO: https://github.com/Hardisky/PRSpec
+analyze	Job summary	2026-11-12T01:04:14.6999023Z   PRSPEC_COMMIT: 7cf99adc66ee843ae87061e79fa27cd294ac4fcf
+analyze	Job summary	2026-11-12T01:04:14.6999409Z   PRSPEC_MODELS: gemini:gemini-3.8-flash gemini:gemini-3.6-flash meta:muse-wonder-1.0
+analyze	Job summary	2026-11-12T01:04:14.6999658Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Job summary	2026-11-12T01:04:14.6999881Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+analyze	Job summary	2026-11-12T01:04:14.7000104Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Job summary	2026-11-12T01:04:14.7000306Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Job summary	2026-11-12T01:04:14.7000509Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Job summary	2026-11-12T01:04:14.7000726Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+analyze	Job summary	2026-11-12T01:04:14.7000894Z   exit_status: 0
+analyze	Job summary	2026-11-12T01:04:14.7001003Z   PR: 1
+analyze	Job summary	2026-11-12T01:04:14.7001125Z   SHA: b695210e13fbbd1b1e5e255df60fa6b50e4b68e2
+analyze	Job summary	2026-11-12T01:04:14.7001277Z   EIPS: 4844
+analyze	Job summary	2026-11-12T01:04:14.7001387Z ##[endgroup]
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	﻿2026-11-12T01:04:14.7325423Z ##[group]Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7325671Z with:
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7325786Z   name: prspec-report
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7325908Z   path: output
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7326024Z   if-no-files-found: ignore
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7326161Z   compression-level: 6
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7326280Z   overwrite: false
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7326402Z   include-hidden-files: false
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7326534Z   archive: true
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7326644Z env:
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7326781Z   PRSPEC_REPO: https://github.com/Hardisky/PRSpec
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7326983Z   PRSPEC_COMMIT: 7cf99adc66ee843ae87061e79fa27cd294ac4fcf
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7327244Z   PRSPEC_MODELS: gemini:gemini-3.8-flash gemini:gemini-3.6-flash meta:muse-wonder-1.0
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7327498Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7327732Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib/pkgconfig
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7327960Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7328185Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7328388Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.16/x64
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7328595Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.16/x64/lib
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7328772Z   exit_status: 0
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.7328883Z ##[endgroup]
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.8376622Z With the provided path, there will be 10 files uploaded
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.8381066Z Artifact name is valid!
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:14.8381498Z Root directory input is valid!
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:15.1023696Z Uploading artifact: prspec-report.zip
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:15.1048164Z Beginning upload of artifact content to blob storage
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:15.5729961Z Uploaded bytes 16570
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:15.6177636Z Finished uploading artifact content to blob storage!
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:15.6178336Z SHA256 digest of uploaded artifact is 2f4ecdbc206bdd226043826ce9f2b13554da4f99a910cb27c0ae1400fe05537c
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:15.6179004Z Finalizing artifact upload
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:16.0453286Z Artifact prspec-report successfully finalized. Artifact ID 13904829194
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:16.0453990Z Artifact prspec-report has been successfully uploaded! Final size is 16570 bytes. Artifact ID is 13904829194
+analyze	Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9	2026-11-12T01:04:16.0456886Z Artifact download URL: https://github.com/Hardisky/besu/actions/runs/43131616614/artifacts/13904829194
+analyze	Post Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0	﻿2026-11-12T01:04:16.0617875Z Post job cleanup.
+analyze	Post Check out pinned EIP specifications	﻿2026-11-12T01:04:16.1697196Z Post job cleanup.
+analyze	Post Check out pinned EIP specifications	2026-11-12T01:04:16.2392984Z [command]/usr/bin/git version
+analyze	Post Check out pinned EIP specifications	2026-11-12T01:04:16.2434175Z git version 2.56.0
+analyze	Post Check out pinned EIP specifications	2026-11-12T01:04:16.2460032Z Temporarily overriding HOME='/home/runner/work/_temp/98477840-f7e3-442d-ad86-85fb3f1edced' before making global git config changes
+analyze	Post Check out pinned EIP specifications	2026-11-12T01:04:16.2460865Z Adding repository directory to the temporary git global config as a safe directory
+analyze	Post Check out pinned EIP specifications	2026-11-12T01:04:16.2463723Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/besu/besu/eips
+analyze	Post Check out pinned EIP specifications	2026-11-12T01:04:16.2503155Z Removing SSH command configuration
+analyze	Post Check out pinned EIP specifications	2026-11-12T01:04:16.2508680Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+analyze	Post Check out pinned EIP specifications	2026-11-12T01:04:16.2551461Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+analyze	Post Check out pinned EIP specifications	2026-11-12T01:04:16.2799289Z Removing HTTP extra header
+analyze	Post Check out pinned EIP specifications	2026-11-12T01:04:16.2805312Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+analyze	Post Check out pinned EIP specifications	2026-11-12T01:04:16.2848605Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+analyze	Post Check out pinned EIP specifications	2026-11-12T01:04:16.3097087Z Removing includeIf entries pointing to credentials config files
+analyze	Post Check out pinned EIP specifications	2026-11-12T01:04:16.3104202Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+analyze	Post Check out pinned EIP specifications	2026-11-12T01:04:16.3151492Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+analyze	Post Check out PR files as data (never executed)	﻿2026-11-12T01:04:16.3541649Z Post job cleanup.
+analyze	Post Check out PR files as data (never executed)	2026-11-12T01:04:16.4260123Z [command]/usr/bin/git version
+analyze	Post Check out PR files as data (never executed)	2026-11-12T01:04:16.4336350Z git version 2.56.0
+analyze	Post Check out PR files as data (never executed)	2026-11-12T01:04:16.4366039Z Temporarily overriding HOME='/home/runner/work/_temp/6f746b0a-cef4-4f3d-a484-c1c4d76c35df' before making global git config changes
+analyze	Post Check out PR files as data (never executed)	2026-11-12T01:04:16.4395276Z Adding repository directory to the temporary git global config as a safe directory
+analyze	Post Check out PR files as data (never executed)	2026-11-12T01:04:16.4408764Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/besu/besu/pr-src
+analyze	Post Check out PR files as data (never executed)	2026-11-12T01:04:16.4416569Z Removing SSH command configuration
+analyze	Post Check out PR files as data (never executed)	2026-11-12T01:04:16.4422745Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+analyze	Post Check out PR files as data (never executed)	2026-11-12T01:04:16.4493586Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+analyze	Post Check out PR files as data (never executed)	2026-11-12T01:04:16.4800235Z Removing HTTP extra header
+analyze	Post Check out PR files as data (never executed)	2026-11-12T01:04:16.4800787Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+analyze	Post Check out PR files as data (never executed)	2026-11-12T01:04:16.4860582Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+analyze	Post Check out PR files as data (never executed)	2026-11-12T01:04:16.5137356Z Removing includeIf entries pointing to credentials config files
+analyze	Post Check out PR files as data (never executed)	2026-11-12T01:04:16.5144183Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+analyze	Post Check out PR files as data (never executed)	2026-11-12T01:04:16.5195194Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+analyze	Complete job	﻿2026-11-12T01:04:16.5572468Z Cleaning up orphan processes

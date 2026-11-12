@@ -1,0 +1,4 @@
+eip	model	result
+4844	gemini:gemini-3.8-flash	exit 20
+4844	gemini:gemini-3.6-flash	exit 20
+4844	meta:muse-wonder-1.0	exit 0

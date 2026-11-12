@@ -1,0 +1,101 @@
+{
+  "metadata": {
+    "title": "EIP-4844 Compliance Report - besu",
+    "eip_number": 4844,
+    "client": "besu",
+    "timestamp": "2026-11-12T01:08:50.604695",
+    "analyzer": "Meta (muse-wonder-1.0)",
+    "version": "2.0.0"
+  },
+  "summary": {
+    "overall_status": "ISSUES FOUND",
+    "average_confidence": 78,
+    "files_analyzed": 1,
+    "total_issues": 5,
+    "high_severity": 1,
+    "medium_severity": 3,
+    "low_severity": 1,
+    "verification": {
+      "verified": false,
+      "confirmed": 0,
+      "disputed": 0,
+      "refuted": 0
+    }
+  },
+  "results": [
+    {
+      "file_name": "Multi-file context",
+      "source_files": [
+        "ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java",
+        "ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/feemarket/ExcessBlobGasCalculator.java",
+        "evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java"
+      ],
+      "client_ref": "19c989a6d96bb412f3815d14687da8cc334f1286",
+      "source_sha256": {
+        "ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java": "b8c9d4ba5212afa1a470a16f9538f787919900a541ae41f688244eb516656bbb",
+        "ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/feemarket/ExcessBlobGasCalculator.java": "e6b432af8b7443beaa6f559b6bce9f1b3005276f63ddb5170f656791d6debe64",
+        "evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java": "21f6d7db4480aab8ced6bea5a33496e55bb5e83f66515aadf9ae59cb974b73a1"
+      },
+      "spec_sha256": "ef1316135b93e7cad423cae9b169243a7c80e7a9d5059d0ad2599a0414aa564c",
+      "status": "PARTIAL_MATCH",
+      "confidence": 78,
+      "issues": [
+        {
+          "code_location": "ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java: computeExcessBlobGas(TransactionSelectionResults, ProtocolSpec), approx. line 350; also evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java: computeExcessBlobGas(long,int)",
+          "description": "AbstractBlockCreator computes the new header's excessBlobGas from parentHeader excess plus the blob count of transactions selected for the current block (newBlobsCount -> blobGasCost(newBlobsCount)). The spec defines header excess_blob_gas as the value prior to the block, derived only from the parent header. This also conflicts internally with ExcessBlobGasCalculator.calculateExcessBlobGasForParent, which correctly uses parent blobGasUsed. On the next block, calculateExcessBlobGasForParent would add the same parent blob gas again, double-counting it.",
+          "potential_impact": "Locally created blocks can have an excess_blob_gas that other clients and the spec validator reject, causing consensus/proposal failures. If accepted by similarly incorrect nodes, blob gas prices drift upward too quickly because current-block blob use is counted twice.",
+          "severity": "HIGH",
+          "spec_reference": "def calc_excess_blob_gas(parent: Header) -> int: if parent.excess_blob_gas + parent.blob_gas_used < TARGET_BLOB_GAS_PER_BLOCK: return 0 else: return parent.excess_blob_gas + parent.blob_gas_used - TARGET_BLOB_GAS_PER_BLOCK; excess_blob_gas is a running total of blob gas consumed in excess of the target, prior to the block.",
+          "suggestion": "In AbstractBlockCreator, set header excessBlobGas using calculateExcessBlobGasForParent(newProtocolSpec, parentHeader) / parent excess plus parent blobGasUsed only, while setting blobGasUsed separately from the current block's selected blobs. Remove or rename the ambiguous int-count overload so callers cannot confuse blob count, current-block gas, and parent gas.",
+          "type": "INCORRECT_LOGIC"
+        },
+        {
+          "code_location": "ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java: computeExcessBlobGas/createBlock header building; evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java: blobGasCost/computeExcessBlobGas",
+          "description": "The reviewed files define TARGET_BLOB_GAS_PER_BLOCK and GAS_PER_BLOB but contain no MAX_BLOB_GAS_PER_BLOCK constant or check that the summed blob gas of selected blob transactions is <= 786432 before writing blobGasUsed into the header.",
+          "potential_impact": "If transaction selection does not enforce the cap elsewhere, the creator can assemble blocks exceeding the blob gas limit that validating clients reject, wasting proposal opportunities and increasing bandwidth/DoS surface.",
+          "severity": "MEDIUM",
+          "spec_reference": "| `MAX_BLOB_GAS_PER_BLOCK` | `786432` |; # ensure the total blob gas spent is at most equal to the limit assert blob_gas_used <= MAX_BLOB_GAS_PER_BLOCK; # ensure blob_gas_used matches header assert block.header.blob_gas_used == blob_gas_used",
+          "suggestion": "Add an explicit MAX_BLOB_GAS_PER_BLOCK limit in the gas calculator/selection path and assert in block assembly that blobGasCost(totalBlobs) <= MAX_BLOB_GAS_PER_BLOCK before building the header.",
+          "type": "MISSING_CHECK"
+        },
+        {
+          "code_location": "ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java: computeExcessBlobGas(TransactionSelectionResults, ProtocolSpec), approx. line 350",
+          "description": "When counting blobs, the code simply maps BLOB transactions to getVersionedHashes().orElseThrow() and sums list sizes. In the reviewed files it does not reject zero-blob blob transactions, does not check that every versioned hash starts with VERSIONED_HASH_VERSION_KZG (0x01), and does not itself verify max_fee_per_blob_gas >= current blob gas price or the blob-specific balance component; it only forwards blobGasPrice to BlockTransactionSelector, whose implementation is not among the reviewed files.",
+          "potential_impact": "Invalid blob transactions could be included in proposed blocks, causing block rejection by correctly validating clients, or underpriced/insufficiently funded blob transactions could be processed inconsistently.",
+          "severity": "MEDIUM",
+          "spec_reference": "if type(tx) is SignedBlobTransaction: # there must be at least one blob assert len(tx.blob_versioned_hashes) > 0 # all versioned blob hashes must start with VERSIONED_HASH_VERSION_KZG for h in tx.blob_versioned_hashes: assert h[0] == VERSIONED_HASH_VERSION_KZG # ensure that the user was willing to at least pay the current blob gasprice assert tx.max_fee_per_blob_gas >= get_blob_gasprice(block.header)",
+          "suggestion": "Add defensive validation during selection/final block assembly, and ensure the execution-layer block validator implements the same checks: at least one blob, 0x01 versioned-hash prefix, blob fee willingness, and balance >= gas*max_fee_per_gas + total_blob_gas*max_fee_per_blob_gas.",
+          "type": "MISSING_CHECK"
+        },
+        {
+          "code_location": "evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java: CancunGasCalculator() constructor; no point-evaluation/KZG verification code in the reviewed files",
+          "description": "The gas calculator only enables precompiles up to KZG_POINT_EVAL (0x0A) by passing its last address byte to ShanghaiGasCalculator. None of the reviewed files implement the point evaluation precompile behavior: fixed 50000 gas, exact 192-byte input, kzg_to_versioned_hash(commitment)==versioned_hash, verify_kzg_proof, canonical field-element checks for z/y against BLS_MODULUS, or returning FIELD_ELEMENTS_PER_BLOB and BLS_MODULUS.",
+          "potential_impact": "If this is the complete implementation scope, point-evaluation calls would be absent or non-compliant, enabling incorrect KZG acceptance/rejection and EVM consensus divergence for rollup fraud/equivalence proofs.",
+          "severity": "MEDIUM",
+          "spec_reference": "The precompile MUST reject non-canonical field elements (i.e. provided field elements MUST be strictly less than `BLS_MODULUS`). assert len(input) == 192 assert kzg_to_versioned_hash(commitment) == versioned_hash assert verify_kzg_proof(commitment, z, y, proof) return Bytes(U256(FIELD_ELEMENTS_PER_BLOB).to_be_bytes32() + U256(BLS_MODULUS).to_be_bytes32())",
+          "suggestion": "Provide/verify a dedicated point-evaluation precompile at 0x0A with POINT_EVALUATION_PRECOMPILE_GAS=50000 implementing the exact input layout, versioned-hash check, canonical z/y checks, KZG proof verification, and specified 64-byte return value.",
+          "type": "MISSING_CHECK"
+        },
+        {
+          "code_location": "ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java: createBlock blobGasPrice calculation; ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/feemarket/ExcessBlobGasCalculator.java: calculateExcessBlobGasForParent",
+          "description": "The block creator delegates blob pricing to FeeMarket.blobGasPricePerGas(calculateExcessBlobGasForParent(...)), and the parent-excess helper is correct, but the reviewed files do not contain fake_exponential or the MIN_BLOB_GASPRICE=1 and BLOB_GASPRICE_UPDATE_FRACTION=3338477 constants/logic needed to verify the blob gas price calculation. This is compounded by the incorrect header excess written by AbstractBlockCreator, which affects later price calculations.",
+          "potential_impact": "An incorrect or unverified exponential approximation can misprice blob gas, causing transaction rejection/inclusion divergence and fee-market instability; the excess-header bug can further distort subsequent prices.",
+          "severity": "LOW",
+          "spec_reference": "def get_blob_gasprice(header: Header) -> int: return fake_exponential( MIN_BLOB_GASPRICE, header.excess_blob_gas, BLOB_GASPRICE_UPDATE_FRACTION ) Approximates `factor * e ** (numerator / denominator)` using Taylor expansion",
+          "suggestion": "Ensure the FeeMarket implementation used for Cancun implements fake_exponential exactly with MIN_BLOB_GASPRICE=1 and BLOB_GASPRICE_UPDATE_FRACTION=3338477 over the current header excess_blob_gas, with overflow-safe integer arithmetic and tests against spec vectors.",
+          "type": "MISSING_CHECK"
+        }
+      ],
+      "summary": "CancunGasCalculator matches GAS_PER_BLOB=2**17 and TARGET_BLOB_GAS_PER_BLOCK=393216, and ExcessBlobGasCalculator correctly derives current excess from the parent header. However, AbstractBlockCreator writes header excess_blob_gas using the current block's blobs instead of only the parent's, causing double-counting and invalid blob-fee progression; the reviewed files also lack explicit max-blob, blob-transaction, KZG point-evaluation, and fake_exponential implementations/checks.",
+      "meta": {
+        "model": "muse-wonder-1.0",
+        "latency_s": 131.82,
+        "model_version": "muse-wonder-1.0",
+        "finish_reason": "stop",
+        "prompt_token_count": 11578,
+        "candidates_token_count": 11405
+      },
+      "raw_response": "{\"confidence\": 78, \"issues\": [{\"code_location\": \"ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java: computeExcessBlobGas(TransactionSelectionResults, ProtocolSpec), approx. line 350; also evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java: computeExcessBlobGas(long,int)\", \"description\": \"AbstractBlockCreator computes the new header's excessBlobGas from parentHeader excess plus the blob count of transactions selected for the current block (newBlobsCount -> blobGasCost(newBlobsCount)). The spec defines header excess_blob_gas as the value prior to the block, derived only from the parent header. This also conflicts internally with ExcessBlobGasCalculator.calculateExcessBlobGasForParent, which correctly uses parent blobGasUsed. On the next block, calculateExcessBlobGasForParent would add the same parent blob gas again, double-counting it.\", \"potential_impact\": \"Locally created blocks can have an excess_blob_gas that other clients and the spec validator reject, causing consensus/proposal failures. If accepted by similarly incorrect nodes, blob gas prices drift upward too quickly because current-block blob use is counted twice.\", \"severity\": \"HIGH\", \"spec_reference\": \"def calc_excess_blob_gas(parent: Header) -> int: if parent.excess_blob_gas + parent.blob_gas_used < TARGET_BLOB_GAS_PER_BLOCK: return 0 else: return parent.excess_blob_gas + parent.blob_gas_used - TARGET_BLOB_GAS_PER_BLOCK; excess_blob_gas is a running total of blob gas consumed in excess of the target, prior to the block.\", \"suggestion\": \"In AbstractBlockCreator, set header excessBlobGas using calculateExcessBlobGasForParent(newProtocolSpec, parentHeader) / parent excess plus parent blobGasUsed only, while setting blobGasUsed separately from the current block's selected blobs. Remove or rename the ambiguous int-count overload so callers cannot confuse blob count, current-block gas, and parent gas.\", \"type\": \"INCORRECT_LOGIC\"}, {\"code_location\": \"ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java: computeExcessBlobGas/createBlock header building; evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java: blobGasCost/computeExcessBlobGas\", \"description\": \"The reviewed files define TARGET_BLOB_GAS_PER_BLOCK and GAS_PER_BLOB but contain no MAX_BLOB_GAS_PER_BLOCK constant or check that the summed blob gas of selected blob transactions is <= 786432 before writing blobGasUsed into the header.\", \"potential_impact\": \"If transaction selection does not enforce the cap elsewhere, the creator can assemble blocks exceeding the blob gas limit that validating clients reject, wasting proposal opportunities and increasing bandwidth/DoS surface.\", \"severity\": \"MEDIUM\", \"spec_reference\": \"| `MAX_BLOB_GAS_PER_BLOCK` | `786432` |; # ensure the total blob gas spent is at most equal to the limit assert blob_gas_used <= MAX_BLOB_GAS_PER_BLOCK; # ensure blob_gas_used matches header assert block.header.blob_gas_used == blob_gas_used\", \"suggestion\": \"Add an explicit MAX_BLOB_GAS_PER_BLOCK limit in the gas calculator/selection path and assert in block assembly that blobGasCost(totalBlobs) <= MAX_BLOB_GAS_PER_BLOCK before building the header.\", \"type\": \"MISSING_CHECK\"}, {\"code_location\": \"ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java: computeExcessBlobGas(TransactionSelectionResults, ProtocolSpec), approx. line 350\", \"description\": \"When counting blobs, the code simply maps BLOB transactions to getVersionedHashes().orElseThrow() and sums list sizes. In the reviewed files it does not reject zero-blob blob transactions, does not check that every versioned hash starts with VERSIONED_HASH_VERSION_KZG (0x01), and does not itself verify max_fee_per_blob_gas >= current blob gas price or the blob-specific balance component; it only forwards blobGasPrice to BlockTransactionSelector, whose implementation is not among the reviewed files.\", \"potential_impact\": \"Invalid blob transactions could be included in proposed blocks, causing block rejection by correctly validating clients, or underpriced/insufficiently funded blob transactions could be processed inconsistently.\", \"severity\": \"MEDIUM\", \"spec_reference\": \"if type(tx) is SignedBlobTransaction: # there must be at least one blob assert len(tx.blob_versioned_hashes) > 0 # all versioned blob hashes must start with VERSIONED_HASH_VERSION_KZG for h in tx.blob_versioned_hashes: assert h[0] == VERSIONED_HASH_VERSION_KZG # ensure that the user was willing to at least pay the current blob gasprice assert tx.max_fee_per_blob_gas >= get_blob_gasprice(block.header)\", \"suggestion\": \"Add defensive validation during selection/final block assembly, and ensure the execution-layer block validator implements the same checks: at least one blob, 0x01 versioned-hash prefix, blob fee willingness, and balance >= gas*max_fee_per_gas + total_blob_gas*max_fee_per_blob_gas.\", \"type\": \"MISSING_CHECK\"}, {\"code_location\": \"evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java: CancunGasCalculator() constructor; no point-evaluation/KZG verification code in the reviewed files\", \"description\": \"The gas calculator only enables precompiles up to KZG_POINT_EVAL (0x0A) by passing its last address byte to ShanghaiGasCalculator. None of the reviewed files implement the point evaluation precompile behavior: fixed 50000 gas, exact 192-byte input, kzg_to_versioned_hash(commitment)==versioned_hash, verify_kzg_proof, canonical field-element checks for z/y against BLS_MODULUS, or returning FIELD_ELEMENTS_PER_BLOB and BLS_MODULUS.\", \"potential_impact\": \"If this is the complete implementation scope, point-evaluation calls would be absent or non-compliant, enabling incorrect KZG acceptance/rejection and EVM consensus divergence for rollup fraud/equivalence proofs.\", \"severity\": \"MEDIUM\", \"spec_reference\": \"The precompile MUST reject non-canonical field elements (i.e. provided field elements MUST be strictly less than `BLS_MODULUS`). assert len(input) == 192 assert kzg_to_versioned_hash(commitment) == versioned_hash assert verify_kzg_proof(commitment, z, y, proof) return Bytes(U256(FIELD_ELEMENTS_PER_BLOB).to_be_bytes32() + U256(BLS_MODULUS).to_be_bytes32())\", \"suggestion\": \"Provide/verify a dedicated point-evaluation precompile at 0x0A with POINT_EVALUATION_PRECOMPILE_GAS=50000 implementing the exact input layout, versioned-hash check, canonical z/y checks, KZG proof verification, and specified 64-byte return value.\", \"type\": \"MISSING_CHECK\"}, {\"code_location\": \"ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java: createBlock blobGasPrice calculation; ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/feemarket/ExcessBlobGasCalculator.java: calculateExcessBlobGasForParent\", \"description\": \"The block creator delegates blob pricing to FeeMarket.blobGasPricePerGas(calculateExcessBlobGasForParent(...)), and the parent-excess helper is correct, but the reviewed files do not contain fake_exponential or the MIN_BLOB_GASPRICE=1 and BLOB_GASPRICE_UPDATE_FRACTION=3338477 constants/logic needed to verify the blob gas price calculation. This is compounded by the incorrect header excess written by AbstractBlockCreator, which affects later price calculations.\", \"potential_impact\": \"An incorrect or unverified exponential approximation can misprice blob gas, causing transaction rejection/inclusion divergence and fee-market instability; the excess-header bug can further distort subsequent prices.\", \"severity\": \"LOW\", \"spec_reference\": \"def get_blob_gasprice(header: Header) -> int: return fake_exponential( MIN_BLOB_GASPRICE, header.excess_blob_gas, BLOB_GASPRICE_UPDATE_FRACTION ) Approximates `factor * e ** (numerator / denominator)` using Taylor expansion\", \"suggestion\": \"Ensure the FeeMarket implementation used for Cancun implements fake_exponential exactly with MIN_BLOB_GASPRICE=1 and BLOB_GASPRICE_UPDATE_FRACTION=3338477 over the current header excess_blob_gas, with overflow-safe integer arithmetic and tests against spec vectors.\", \"type\": \"MISSING_CHECK\"}], \"status\": \"PARTIAL_MATCH\", \"summary\": \"CancunGasCalculator matches GAS_PER_BLOB=2**17 and TARGET_BLOB_GAS_PER_BLOCK=393216, and ExcessBlobGasCalculator correctly derives current excess from the parent header. However, AbstractBlockCreator writes header excess_blob_gas using the current block's blobs instead of only the parent's, causing double-counting and invalid blob-fee progression; the reviewed files also lack explicit max-blob, blob-transaction, KZG point-evaluation, and fake_exponential implementations/checks.\"}"
+    }
+  ]
+}

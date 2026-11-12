@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EIP-4844 Compliance Report - besu</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; background: #f0f2f5; color: #1a1a2e; line-height: 1.6; }
+        .page { max-width: 960px; margin: 40px auto; padding: 0 20px; }
+        header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 36px 40px; border-radius: 12px 12px 0 0; }
+        header h1 { margin: 0 0 6px; font-size: 1.6em; font-weight: 700; }
+        header .meta { font-size: 0.85em; opacity: 0.8; }
+        .body { background: #fff; padding: 32px 40px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+        .kpi-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 16px; margin-bottom: 32px; }
+        .kpi { background: #f8f9fb; border: 1px solid #e8eaed; border-radius: 8px; padding: 18px 14px; text-align: center; }
+        .kpi .num { font-size: 1.7em; font-weight: 700; }
+        .kpi .lbl { font-size: 0.78em; color: #666; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+        h2 { font-size: 1.15em; font-weight: 600; color: #333; border-bottom: 2px solid #e8eaed; padding-bottom: 8px; margin: 28px 0 18px; }
+        .file-card { border: 1px solid #e0e3e8; border-radius: 8px; margin-bottom: 20px; overflow: hidden; }
+        .file-card .head { display: flex; justify-content: space-between; align-items: center; padding: 12px 18px; background: #fafbfc; border-bottom: 1px solid #e0e3e8; }
+        .file-card .head .path { font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; font-size: 0.88em; font-weight: 500; }
+        .badge { display: inline-block; padding: 3px 12px; border-radius: 12px; color: #fff; font-size: 0.75em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px; }
+        .file-card .content { padding: 16px 18px; }
+        .file-card .content p { margin: 0 0 10px; }
+        .issue { border-left: 3px solid; padding: 12px 16px; margin: 12px 0; border-radius: 0 6px 6px 0; background: #fafbfc; }
+        .issue-high { border-color: #e03e3e; background: #fef2f2; }
+        .issue-medium { border-color: #d4a017; background: #fffbeb; }
+        .issue-low { border-color: #2e7d32; background: #f0fdf4; }
+        .issue .title { font-weight: 600; margin-bottom: 6px; font-size: 0.92em; }
+        .issue .detail { font-size: 0.85em; color: #555; margin: 3px 0; }
+        .issue .detail strong { color: #333; }
+        code { background: #eef0f4; padding: 1px 5px; border-radius: 3px; font-family: 'SFMono-Regular', Consolas, monospace; font-size: 0.88em; }
+        .footer { text-align: center; padding: 24px 0 0; margin-top: 32px; border-top: 1px solid #e8eaed; font-size: 0.8em; color: #888; }
+    </style>
+</head>
+<body>
+<div class="page">
+    <header>
+        <h1>EIP-4844 Compliance Report - besu</h1>
+        <div class="meta">2026-11-12 01:08 &middot; Meta (muse-wonder-1.0) &middot; v2.0.0</div>
+    </header>
+    <div class="body">
+        <div class="kpi-row">
+            <div class="kpi"><div class="num">ISSUES FOUND</div><div class="lbl">Status</div></div>
+            <div class="kpi"><div class="num">78%</div><div class="lbl">Model-reported confidence (not probability)</div></div>
+            <div class="kpi"><div class="num">1</div><div class="lbl">Analysis units</div></div>
+            <div class="kpi"><div class="num" style="color:#e03e3e">1</div><div class="lbl">High</div></div>
+            <div class="kpi"><div class="num" style="color:#d4a017">3</div><div class="lbl">Medium</div></div>
+            <div class="kpi"><div class="num" style="color:#2e7d32">1</div><div class="lbl">Low</div></div>
+            
+        </div>
+
+        <div style="background:#f8f9fb;border:1px solid #e8eaed;border-radius:8px;padding:18px 22px;margin-bottom:28px;font-size:0.93em;line-height:1.7;white-space:pre-line;">PRSpec reported 1 analysis unit for besu&#x27;s EIP-4844 implementation using Meta (muse-wonder-1.0). Overall status: ISSUES FOUND. Average model-reported confidence: 78% (not a calibrated probability). 5 issues detected (1 high, 3 medium, 1 low).
+
+Multi-file context — PARTIAL_MATCH (5 issues): CancunGasCalculator matches GAS_PER_BLOB=2**17 and TARGET_BLOB_GAS_PER_BLOCK=393216, and ExcessBlobGasCalculator correct</div>
+
+        <h2>Findings</h2>
+
+        <div class="file-card">
+            <div class="head">
+                <span class="path">Multi-file context</span>
+                <span class="badge" style="background:#ffc107">PARTIAL_MATCH</span>
+            </div>
+            <div class="content">
+                <p><strong>Model-reported confidence (not probability):</strong> 78%</p>
+                <p>CancunGasCalculator matches GAS_PER_BLOB=2**17 and TARGET_BLOB_GAS_PER_BLOCK=393216, and ExcessBlobGasCalculator correctly derives current excess from the parent header. However, AbstractBlockCreator writes header excess_blob_gas using the current block&#x27;s blobs instead of only the parent&#x27;s, causing double-counting and invalid blob-fee progression; the reviewed files also lack explicit max-blob, blob-transaction, KZG point-evaluation, and fake_exponential implementations/checks.</p>
+<p>Selected source files (one joint analysis; not sent if incomplete):</p><ul><li><code>ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java</code></li><li><code>ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/feemarket/ExcessBlobGasCalculator.java</code></li><li><code>evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java</code></li></ul><p>Code commit: <code>19c989a6d96bb412f3815d14687da8cc334f1286</code> · Spec SHA-256: <code>ef1316135b93e7ca</code> · Model version: <code>muse-wonder-1.0</code> · Tokens: <code>input 11,578, output 11,405</code> · Model latency: <code>131.82 s</code></p>
+                <div class="issue issue-high">
+                    <div class="title">[HIGH] INCORRECT_LOGIC</div>
+                    
+                    <div class="detail"><strong>Description:</strong> AbstractBlockCreator computes the new header&#x27;s excessBlobGas from parentHeader excess plus the blob count of transactions selected for the current block (newBlobsCount -&gt; blobGasCost(newBlobsCount)). The spec defines header excess_blob_gas as the value prior to the block, derived only from the parent header. This also conflicts internally with ExcessBlobGasCalculator.calculateExcessBlobGasForParent, which correctly uses parent blobGasUsed. On the next block, calculateExcessBlobGasForParent would add the same parent blob gas again, double-counting it.</div>
+                    <div class="detail"><strong>Spec ref:</strong> <code>def calc_excess_blob_gas(parent: Header) -&gt; int: if parent.excess_blob_gas + parent.blob_gas_used &lt; TARGET_BLOB_GAS_PER_BLOCK: return 0 else: return parent.excess_blob_gas + parent.blob_gas_used - TARGET_BLOB_GAS_PER_BLOCK; excess_blob_gas is a running total of blob gas consumed in excess of the target, prior to the block.</code></div>
+                    <div class="detail"><strong>Location:</strong> <code>ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java: computeExcessBlobGas(TransactionSelectionResults, ProtocolSpec), approx. line 350; also evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java: computeExcessBlobGas(long,int)</code></div>
+                    <div class="detail"><strong>Impact:</strong> Locally created blocks can have an excess_blob_gas that other clients and the spec validator reject, causing consensus/proposal failures. If accepted by similarly incorrect nodes, blob gas prices drift upward too quickly because current-block blob use is counted twice.</div>
+                    <div class="detail"><strong>Fix:</strong> In AbstractBlockCreator, set header excessBlobGas using calculateExcessBlobGasForParent(newProtocolSpec, parentHeader) / parent excess plus parent blobGasUsed only, while setting blobGasUsed separately from the current block&#x27;s selected blobs. Remove or rename the ambiguous int-count overload so callers cannot confuse blob count, current-block gas, and parent gas.</div>
+                </div>
+
+                <div class="issue issue-medium">
+                    <div class="title">[MEDIUM] MISSING_CHECK</div>
+                    
+                    <div class="detail"><strong>Description:</strong> The reviewed files define TARGET_BLOB_GAS_PER_BLOCK and GAS_PER_BLOB but contain no MAX_BLOB_GAS_PER_BLOCK constant or check that the summed blob gas of selected blob transactions is &lt;= 786432 before writing blobGasUsed into the header.</div>
+                    <div class="detail"><strong>Spec ref:</strong> <code>| `MAX_BLOB_GAS_PER_BLOCK` | `786432` |; # ensure the total blob gas spent is at most equal to the limit assert blob_gas_used &lt;= MAX_BLOB_GAS_PER_BLOCK; # ensure blob_gas_used matches header assert block.header.blob_gas_used == blob_gas_used</code></div>
+                    <div class="detail"><strong>Location:</strong> <code>ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java: computeExcessBlobGas/createBlock header building; evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java: blobGasCost/computeExcessBlobGas</code></div>
+                    <div class="detail"><strong>Impact:</strong> If transaction selection does not enforce the cap elsewhere, the creator can assemble blocks exceeding the blob gas limit that validating clients reject, wasting proposal opportunities and increasing bandwidth/DoS surface.</div>
+                    <div class="detail"><strong>Fix:</strong> Add an explicit MAX_BLOB_GAS_PER_BLOCK limit in the gas calculator/selection path and assert in block assembly that blobGasCost(totalBlobs) &lt;= MAX_BLOB_GAS_PER_BLOCK before building the header.</div>
+                </div>
+
+                <div class="issue issue-medium">
+                    <div class="title">[MEDIUM] MISSING_CHECK</div>
+                    
+                    <div class="detail"><strong>Description:</strong> When counting blobs, the code simply maps BLOB transactions to getVersionedHashes().orElseThrow() and sums list sizes. In the reviewed files it does not reject zero-blob blob transactions, does not check that every versioned hash starts with VERSIONED_HASH_VERSION_KZG (0x01), and does not itself verify max_fee_per_blob_gas &gt;= current blob gas price or the blob-specific balance component; it only forwards blobGasPrice to BlockTransactionSelector, whose implementation is not among the reviewed files.</div>
+                    <div class="detail"><strong>Spec ref:</strong> <code>if type(tx) is SignedBlobTransaction: # there must be at least one blob assert len(tx.blob_versioned_hashes) &gt; 0 # all versioned blob hashes must start with VERSIONED_HASH_VERSION_KZG for h in tx.blob_versioned_hashes: assert h[0] == VERSIONED_HASH_VERSION_KZG # ensure that the user was willing to at least pay the current blob gasprice assert tx.max_fee_per_blob_gas &gt;= get_blob_gasprice(block.header)</code></div>
+                    <div class="detail"><strong>Location:</strong> <code>ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java: computeExcessBlobGas(TransactionSelectionResults, ProtocolSpec), approx. line 350</code></div>
+                    <div class="detail"><strong>Impact:</strong> Invalid blob transactions could be included in proposed blocks, causing block rejection by correctly validating clients, or underpriced/insufficiently funded blob transactions could be processed inconsistently.</div>
+                    <div class="detail"><strong>Fix:</strong> Add defensive validation during selection/final block assembly, and ensure the execution-layer block validator implements the same checks: at least one blob, 0x01 versioned-hash prefix, blob fee willingness, and balance &gt;= gas*max_fee_per_gas + total_blob_gas*max_fee_per_blob_gas.</div>
+                </div>
+
+                <div class="issue issue-medium">
+                    <div class="title">[MEDIUM] MISSING_CHECK</div>
+                    
+                    <div class="detail"><strong>Description:</strong> The gas calculator only enables precompiles up to KZG_POINT_EVAL (0x0A) by passing its last address byte to ShanghaiGasCalculator. None of the reviewed files implement the point evaluation precompile behavior: fixed 50000 gas, exact 192-byte input, kzg_to_versioned_hash(commitment)==versioned_hash, verify_kzg_proof, canonical field-element checks for z/y against BLS_MODULUS, or returning FIELD_ELEMENTS_PER_BLOB and BLS_MODULUS.</div>
+                    <div class="detail"><strong>Spec ref:</strong> <code>The precompile MUST reject non-canonical field elements (i.e. provided field elements MUST be strictly less than `BLS_MODULUS`). assert len(input) == 192 assert kzg_to_versioned_hash(commitment) == versioned_hash assert verify_kzg_proof(commitment, z, y, proof) return Bytes(U256(FIELD_ELEMENTS_PER_BLOB).to_be_bytes32() + U256(BLS_MODULUS).to_be_bytes32())</code></div>
+                    <div class="detail"><strong>Location:</strong> <code>evm/src/main/java/org/hyperledger/besu/evm/gascalculator/CancunGasCalculator.java: CancunGasCalculator() constructor; no point-evaluation/KZG verification code in the reviewed files</code></div>
+                    <div class="detail"><strong>Impact:</strong> If this is the complete implementation scope, point-evaluation calls would be absent or non-compliant, enabling incorrect KZG acceptance/rejection and EVM consensus divergence for rollup fraud/equivalence proofs.</div>
+                    <div class="detail"><strong>Fix:</strong> Provide/verify a dedicated point-evaluation precompile at 0x0A with POINT_EVALUATION_PRECOMPILE_GAS=50000 implementing the exact input layout, versioned-hash check, canonical z/y checks, KZG proof verification, and specified 64-byte return value.</div>
+                </div>
+
+                <div class="issue issue-low">
+                    <div class="title">[LOW] MISSING_CHECK</div>
+                    
+                    <div class="detail"><strong>Description:</strong> The block creator delegates blob pricing to FeeMarket.blobGasPricePerGas(calculateExcessBlobGasForParent(...)), and the parent-excess helper is correct, but the reviewed files do not contain fake_exponential or the MIN_BLOB_GASPRICE=1 and BLOB_GASPRICE_UPDATE_FRACTION=3338477 constants/logic needed to verify the blob gas price calculation. This is compounded by the incorrect header excess written by AbstractBlockCreator, which affects later price calculations.</div>
+                    <div class="detail"><strong>Spec ref:</strong> <code>def get_blob_gasprice(header: Header) -&gt; int: return fake_exponential( MIN_BLOB_GASPRICE, header.excess_blob_gas, BLOB_GASPRICE_UPDATE_FRACTION ) Approximates `factor * e ** (numerator / denominator)` using Taylor expansion</code></div>
+                    <div class="detail"><strong>Location:</strong> <code>ethereum/blockcreation/src/main/java/org/hyperledger/besu/ethereum/blockcreation/AbstractBlockCreator.java: createBlock blobGasPrice calculation; ethereum/core/src/main/java/org/hyperledger/besu/ethereum/mainnet/feemarket/ExcessBlobGasCalculator.java: calculateExcessBlobGasForParent</code></div>
+                    <div class="detail"><strong>Impact:</strong> An incorrect or unverified exponential approximation can misprice blob gas, causing transaction rejection/inclusion divergence and fee-market instability; the excess-header bug can further distort subsequent prices.</div>
+                    <div class="detail"><strong>Fix:</strong> Ensure the FeeMarket implementation used for Cancun implements fake_exponential exactly with MIN_BLOB_GASPRICE=1 and BLOB_GASPRICE_UPDATE_FRACTION=3338477 over the current header excess_blob_gas, with overflow-safe integer arithmetic and tests against spec vectors.</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            PRSpec v2.0.0 &middot; Meta (muse-wonder-1.0) &middot; EIP-4844 &middot; besu &middot; 2026-11-12 01:08
+        </div>
+    </div>
+</div>
+</body>
+</html>
