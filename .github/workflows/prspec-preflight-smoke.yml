@@ -21,8 +21,15 @@ jobs:
           repo = os.environ['GITHUB_REPOSITORY']
           runs = {'Hardisky/besu':'43122516246', 'Hardisky/PRSpec':'43122522120'}
           headers = {'Authorization': 'Bearer '+os.environ['GH_TOKEN'], 'Accept':'application/vnd.github+json', 'User-Agent':'PRSpec-preflight'}
+          class StripAuthRedirect(urllib.request.HTTPRedirectHandler):
+              def redirect_request(self, req, fp, code, msg, hdrs, newurl):
+                  request = super().redirect_request(req, fp, code, msg, hdrs, newurl)
+                  if request is not None:
+                      request.remove_header('Authorization')
+                  return request
+          opener=urllib.request.build_opener(StripAuthRedirect())
           def get(url):
-              with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=30) as response:
+              with opener.open(urllib.request.Request(url, headers=headers), timeout=30) as response:
                   return response.read(5000000)
           reason = 'no_matching_output'
           stage = 'jobs'
