@@ -1,143 +1,85 @@
-name: PRSpec diagnostic preflight
+name: Gemini preflight
 on:
   push:
     branches: [prspec-pilot-preflight-20261110]
     paths: [.github/workflows/prspec-preflight-smoke.yml]
-permissions:
-  actions: read
-  contents: read
+permissions: {}
 jobs:
-  diagnostics:
+  gemini:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 4
     steps:
-      - name: Diagnose original failed run without exposing log contents
-        id: logs
+      - name: Send one bounded request to Gemini
+        id: probe
         env:
-          GH_TOKEN: ${{ github.token }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           python3 - <<'CODE'
-          import json, os, re, urllib.request
-          repo = os.environ['GITHUB_REPOSITORY']
-          runs = {'Hardisky/besu':'43122516246', 'Hardisky/PRSpec':'43122522120'}
-          headers = {'Authorization': 'Bearer '+os.environ['GH_TOKEN'], 'Accept':'application/vnd.github+json', 'User-Agent':'PRSpec-preflight'}
-          class StripAuthRedirect(urllib.request.HTTPRedirectHandler):
-              def redirect_request(self, req, fp, code, msg, hdrs, newurl):
-                  request = super().redirect_request(req, fp, code, msg, hdrs, newurl)
-                  if request is not None:
-                      request.remove_header('Authorization')
-                  return request
-          opener=urllib.request.build_opener(StripAuthRedirect())
-          def get(url):
-              with opener.open(urllib.request.Request(url, headers=headers), timeout=30) as response:
-                  return response.read(5000000)
-          reason = 'no_matching_output'
-          stage = 'jobs'
+          import json, os, urllib.error, urllib.request
+          outcome='other_error'
           try:
-              jobs=json.loads(get(f'https://api.github.com/repos/{repo}/actions/runs/{runs[repo]}/jobs'))['jobs']
-              stage='logs'
-              lines=get(f'https://api.github.com/repos/{repo}/actions/jobs/{jobs[0]["id"]}/logs').decode('utf-8', 'replace').splitlines()
-              for line in lines:
-                  m=re.match(r'^\d{4}-\d\d-\d\dT\S+Z (FAIL: .*)$', line)
-                  if not m:
-                      continue
-                  msg=m.group(1)
-                  if msg == 'FAIL: PRSPEC_META_API_KEY unavailable to this job': reason='secret_missing'
-                  elif msg == 'FAIL: Meta returned no message content': reason='empty_response'
-                  elif re.fullmatch(r'FAIL: Meta HTTP status (400|401|403|404|429|500|503)', msg): reason='http_'+msg.rsplit(' ',1)[-1]
-                  elif msg.startswith('FAIL: Meta HTTP status '): reason='http_other'
-                  elif msg.startswith('FAIL: Meta request error:'): reason='request_error'
+              key=os.environ.get('GEMINI_API_KEY','')
+              if not key:
+                  outcome='secret_missing'
+              else:
+                  body={'contents':[{'parts':[{'text':'Reply with exactly OK.'}]}], 'generationConfig':{'maxOutputTokens':256}}
+                  req=urllib.request.Request('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.6-flash:generateContent',data=json.dumps(body).encode(),headers={'Content-Type':'application/json','x-goog-api-key':key},method='POST')
+                  with urllib.request.urlopen(req,timeout=90) as response:
+                      payload=json.load(response)
+                  candidates=payload.get('candidates') or []
+                  parts=(candidates[0].get('content') or {}).get('parts',[]) if candidates else []
+                  outcome='ok' if any(p.get('text') for p in parts) else 'empty_response'
+                  usage=payload.get('usageMetadata') or {}
+                  print('prompt_token_count:',usage.get('promptTokenCount','not reported'))
+                  print('candidate_token_count:',usage.get('candidatesTokenCount','not reported'))
           except urllib.error.HTTPError as exc:
-              reason=stage+'_http_'+str(exc.code) if exc.code in (401,403,404,429,500,503) else stage+'_http_other'
+              outcome='http_'+str(exc.code) if exc.code in (400,401,403,404,429,500,503) else 'http_other'
+          except urllib.error.URLError:
+              outcome='network_error'
           except Exception:
-              reason=stage+'_exception'
-          with open(os.environ['GITHUB_OUTPUT'],'a') as f: f.write('reason='+reason+'\n')
-          print('Only a fixed diagnostic category is exposed.')
+              outcome='other_error'
+          with open(os.environ['GITHUB_OUTPUT'],'a') as f: f.write('outcome='+outcome+'\n')
+          print('Gemini preflight category:',outcome)
           CODE
-      - name: Earlier failure secret_missing
-        if: steps.logs.outputs.reason == 'secret_missing'
-        run: echo Diagnostic category confirmed
-      - name: Earlier failure empty_response
-        if: steps.logs.outputs.reason == 'empty_response'
-        run: echo Diagnostic category confirmed
-      - name: Earlier failure http_400
-        if: steps.logs.outputs.reason == 'http_400'
-        run: echo Diagnostic category confirmed
-      - name: Earlier failure http_401
-        if: steps.logs.outputs.reason == 'http_401'
-        run: echo Diagnostic category confirmed
-      - name: Earlier failure http_403
-        if: steps.logs.outputs.reason == 'http_403'
-        run: echo Diagnostic category confirmed
-      - name: Earlier failure http_404
-        if: steps.logs.outputs.reason == 'http_404'
-        run: echo Diagnostic category confirmed
-      - name: Earlier failure http_429
-        if: steps.logs.outputs.reason == 'http_429'
-        run: echo Diagnostic category confirmed
-      - name: Earlier failure http_500
-        if: steps.logs.outputs.reason == 'http_500'
-        run: echo Diagnostic category confirmed
-      - name: Earlier failure http_503
-        if: steps.logs.outputs.reason == 'http_503'
-        run: echo Diagnostic category confirmed
-      - name: Earlier failure http_other
-        if: steps.logs.outputs.reason == 'http_other'
-        run: echo Diagnostic category confirmed
-      - name: Earlier failure request_error
-        if: steps.logs.outputs.reason == 'request_error'
-        run: echo Diagnostic category confirmed
-      - name: Earlier failure no_matching_output
-        if: steps.logs.outputs.reason == 'no_matching_output'
-        run: echo Diagnostic category confirmed
-      - name: Earlier failure logs_unavailable
-        if: steps.logs.outputs.reason == 'logs_unavailable'
-        run: echo Diagnostic category confirmed
-      - name: Diagnostic access jobs_http_401
-        if: steps.logs.outputs.reason == 'jobs_http_401'
-        run: echo Diagnostic category confirmed
-      - name: Diagnostic access jobs_http_403
-        if: steps.logs.outputs.reason == 'jobs_http_403'
-        run: echo Diagnostic category confirmed
-      - name: Diagnostic access jobs_http_404
-        if: steps.logs.outputs.reason == 'jobs_http_404'
-        run: echo Diagnostic category confirmed
-      - name: Diagnostic access jobs_http_429
-        if: steps.logs.outputs.reason == 'jobs_http_429'
-        run: echo Diagnostic category confirmed
-      - name: Diagnostic access jobs_http_500
-        if: steps.logs.outputs.reason == 'jobs_http_500'
-        run: echo Diagnostic category confirmed
-      - name: Diagnostic access jobs_http_503
-        if: steps.logs.outputs.reason == 'jobs_http_503'
-        run: echo Diagnostic category confirmed
-      - name: Diagnostic access jobs_http_other
-        if: steps.logs.outputs.reason == 'jobs_http_other'
-        run: echo Diagnostic category confirmed
-      - name: Diagnostic access jobs_exception
-        if: steps.logs.outputs.reason == 'jobs_exception'
-        run: echo Diagnostic category confirmed
-      - name: Diagnostic access logs_http_401
-        if: steps.logs.outputs.reason == 'logs_http_401'
-        run: echo Diagnostic category confirmed
-      - name: Diagnostic access logs_http_403
-        if: steps.logs.outputs.reason == 'logs_http_403'
-        run: echo Diagnostic category confirmed
-      - name: Diagnostic access logs_http_404
-        if: steps.logs.outputs.reason == 'logs_http_404'
-        run: echo Diagnostic category confirmed
-      - name: Diagnostic access logs_http_429
-        if: steps.logs.outputs.reason == 'logs_http_429'
-        run: echo Diagnostic category confirmed
-      - name: Diagnostic access logs_http_500
-        if: steps.logs.outputs.reason == 'logs_http_500'
-        run: echo Diagnostic category confirmed
-      - name: Diagnostic access logs_http_503
-        if: steps.logs.outputs.reason == 'logs_http_503'
-        run: echo Diagnostic category confirmed
-      - name: Diagnostic access logs_http_other
-        if: steps.logs.outputs.reason == 'logs_http_other'
-        run: echo Diagnostic category confirmed
-      - name: Diagnostic access logs_exception
-        if: steps.logs.outputs.reason == 'logs_exception'
-        run: echo Diagnostic category confirmed
+      - name: Gemini ok
+        if: steps.probe.outputs.outcome == 'ok'
+        run: echo Gemini preflight category
+      - name: Gemini secret_missing
+        if: steps.probe.outputs.outcome == 'secret_missing'
+        run: echo Gemini preflight category
+      - name: Gemini empty_response
+        if: steps.probe.outputs.outcome == 'empty_response'
+        run: echo Gemini preflight category
+      - name: Gemini http_400
+        if: steps.probe.outputs.outcome == 'http_400'
+        run: echo Gemini preflight category
+      - name: Gemini http_401
+        if: steps.probe.outputs.outcome == 'http_401'
+        run: echo Gemini preflight category
+      - name: Gemini http_403
+        if: steps.probe.outputs.outcome == 'http_403'
+        run: echo Gemini preflight category
+      - name: Gemini http_404
+        if: steps.probe.outputs.outcome == 'http_404'
+        run: echo Gemini preflight category
+      - name: Gemini http_429
+        if: steps.probe.outputs.outcome == 'http_429'
+        run: echo Gemini preflight category
+      - name: Gemini http_500
+        if: steps.probe.outputs.outcome == 'http_500'
+        run: echo Gemini preflight category
+      - name: Gemini http_503
+        if: steps.probe.outputs.outcome == 'http_503'
+        run: echo Gemini preflight category
+      - name: Gemini http_other
+        if: steps.probe.outputs.outcome == 'http_other'
+        run: echo Gemini preflight category
+      - name: Gemini network_error
+        if: steps.probe.outputs.outcome == 'network_error'
+        run: echo Gemini preflight category
+      - name: Gemini other_error
+        if: steps.probe.outputs.outcome == 'other_error'
+        run: echo Gemini preflight category
+      - name: Require successful Gemini response
+        if: steps.probe.outputs.outcome != 'ok'
+        run: exit 1
